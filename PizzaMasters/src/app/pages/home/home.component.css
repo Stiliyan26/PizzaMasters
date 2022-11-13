@@ -11,7 +11,7 @@
     background-color: #bd2d30;
     border-radius: 20px;
     margin: unset;
-    padding: 5px 10px;
+    padding: 10px 40px;
     text-transform: uppercase;
     cursor: pointer;
     transition: 0.3s;
@@ -26,7 +26,7 @@
     text-decoration: none;
     color: #f2e8cf;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 
 @media only screen and (min-height: 1000px)  and (min-width: 1900px){

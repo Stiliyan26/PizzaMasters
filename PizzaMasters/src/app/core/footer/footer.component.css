@@ -9,11 +9,13 @@ footer {
     position: sticky;
     left: 0px;
     bottom: 0px;
+    z-index: 2;
 }
 
 .follow {
     color: #f2e8cf;
     text-shadow: 2px 2px #29431b;
+    padding-top: 10px;
 }
 
 .social-media {
