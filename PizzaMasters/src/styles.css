@@ -1,0 +1,19 @@
+@import url('./assets/reset.css');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=PT+Sans:wght@400;700&family=Roboto:wght@300;500;700&display=swap');
+
+.container {
+    width: 100%;
+    min-height: 700px;
+    background-image: url("./assets/pizzabg4.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+
+@media only screen and (min-height: 1000px)  and (min-width: 1900px){
+    .container {
+        height: 90vh;
+    }
+}

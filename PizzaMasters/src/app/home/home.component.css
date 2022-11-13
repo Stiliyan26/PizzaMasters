@@ -1,0 +1,40 @@
+.welcome {
+    color: #f2e8cf;
+    font-size: 4rem;
+    font-family: 'PT Sans';
+    text-align: center;
+    padding-top: 100px;
+    text-shadow: 5px 5px black;
+}
+
+.welcome .btn {
+    background-color: #bd2d30;
+    border-radius: 20px;
+    margin: unset;
+    padding: 5px 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.welcome .btn:hover {
+    background-color: #de2225;
+    color: #fff;
+}
+
+.welcome .btn a {
+    text-decoration: none;
+    color: #f2e8cf;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+@media only screen and (min-height: 1000px)  and (min-width: 1900px){
+    .welcome {
+        font-size: 6rem;
+    }
+
+    .welcome .btn a {
+        font-size: 4rem;
+    }
+}
