@@ -8,6 +8,7 @@
     margin: 0 auto;
     font-family: 'Roboto';
     min-height: 400px;
+    border-radius: 20px;
 }
 
 #login .form--info {
@@ -27,6 +28,8 @@
     font-size: 2rem;
     color: #f2e8cf;
     margin-bottom: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #login .input--info {
@@ -49,12 +52,24 @@
 
 #login .inp {
     width: 100%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #efefef;
+}
+
+#login .inp::placeholder {
+    padding-left: 5px;
 }
 
 #login .icon {
+    width: 15%;
+    height: 100%;
     background-color: #bc4749;
-    font-size: 20px;
-    padding: 15px;
+    font-size: 18px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    padding-left: 22px;
+    padding-top: 15px;
 }
 
 #login .login--btn {
@@ -84,4 +99,5 @@
 #login .redirect a {
     color: #7eb2db;
     text-decoration-color: #7eb2db;
+    padding-left: 2px;
 }
