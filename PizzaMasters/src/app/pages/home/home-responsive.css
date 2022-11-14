@@ -1,0 +1,9 @@
+@media only screen and (min-width: 1900px) and (min-height: 1000px) {
+    .welcome {
+        font-size: 6rem;
+    }
+
+    .welcome .btn a {
+        font-size: 4rem;
+    }
+}

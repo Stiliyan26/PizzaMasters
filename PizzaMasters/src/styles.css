@@ -3,7 +3,7 @@
 
 .container {
     width: 100%;
-    min-height: 700px;
+    min-height: 80vh;
     background-image: url("./assets/pizzabg4.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -26,9 +26,9 @@
 }
 
 
-@media only screen and (min-height: 1000px) and (min-width: 1900px) {
+/* @media only screen and (min-height: 1000px) and (min-width: 1900px) {
     .container {
-        min-height: 1200px;
+        min-height: 80vh;
         height: 100%;
     }
-}
+} */

@@ -1,0 +1,25 @@
+@media screen and (min-width: 1900px) and (min-height: 1000px) {
+    .position {
+        padding-top: 300px;
+    }
+
+    .mainbox .err {
+        font-size: 20rem;
+        left: 15%;
+    }
+
+    .mainbox .err2 {
+        font-size: 20rem;
+        left: 75%;
+    }
+
+    .mainbox .far {
+        font-size: 17rem;
+    }
+
+    .mainbox .msg {
+        top: 85%;
+        left: 22%;
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,57 @@
+.position {
+    margin: 0 auto;
+    padding-top: 100px;
+}
+
+.mainbox {
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    position: relative;
+    font-family: 'Roboto';
+}
+
+.mainbox .error {
+     text-shadow: 5px 5px black;
+     color: #bc4749;
+}
+
+.mainbox .err {
+    font-size: 14rem;
+    position: absolute;
+    left: 25%;
+    top: 8%;
+}
+
+.mainbox .far {
+    position: absolute;
+    font-size: 11rem;
+    left: 42%;
+    top: 15%;
+}
+
+.mainbox .err2 {
+    font-size: 14rem;
+    position: absolute;
+    left: 63%;
+    top: 8%;
+}
+
+.mainbox .msg {
+    text-align: center;
+    font-size: 1.6rem;
+    position: absolute;
+    left: 16%;
+    top: 60%;
+    width: 75%;
+    color: #386641;
+}
+
+.mainbox a {
+    text-decoration: none;
+    color: #95c2de;
+}
+
+.mainbox a:hover {
+    text-decoration: underline;
+}

@@ -3,8 +3,9 @@
     font-size: 4rem;
     font-family: 'PT Sans';
     text-align: center;
-    padding-top: 100px;
-    text-shadow: 5px 5px black;
+    padding-top: 70px;
+    text-shadow: 10px 10px black;
+    height: 500px;
 }
 
 .welcome .btn {
@@ -27,14 +28,6 @@
     color: #f2e8cf;
     font-weight: bold;
     font-size: 1.7rem;
+    text-shadow: 3px 3px rgb(105, 1, 1);
 }
 
-@media only screen and (min-height: 1000px)  and (min-width: 1900px){
-    .welcome {
-        font-size: 6rem;
-    }
-
-    .welcome .btn a {
-        font-size: 4rem;
-    }
-}
