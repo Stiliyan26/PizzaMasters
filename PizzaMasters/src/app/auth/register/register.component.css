@@ -1,8 +1,9 @@
 .form--container {
-    padding-top: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-#login {
+#register {
     background-color: #f2e8cf;
     width: 30%;
     margin: 0 auto;
@@ -11,14 +12,14 @@
     border-radius: 30px;
 }
 
-#login .form--info {
+#register .form--info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#login .title {
+#register .title {
     background-color: #31572c;
     height: 80px;
     width: 100%;
@@ -32,13 +33,13 @@
     border-top-right-radius: 20px;
 }
 
-#login .input--info {
+#register .input--info {
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
 }
 
-#login .inp--container {
+#register .inp--container {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -46,11 +47,11 @@
     width: 400px;
 }
 
-#login .label {
+#register .label {
     padding-bottom: 5px;
 }
 
-#login .inp {
+#register .inp {
     width: 100%;
     padding-left: 10px;
     border-top-right-radius: 20px;
@@ -58,11 +59,11 @@
     background-color: #efefef;
 }
 
-#login .inp::placeholder {
+#register .inp::placeholder {
     padding-left: 5px;
 }
 
-#login .icon {
+#register .icon {
     width: 15%;
     height: 100%;
     background-color: #bc4749;
@@ -73,7 +74,7 @@
     padding-top: 15px;
 }
 
-#login .login--btn {
+#register .register--btn {
     background-color: #31572c;
     width: 400px;
     font-size: 1.2rem;
@@ -88,16 +89,16 @@
     cursor: pointer;
 }
 
-#login .login--btn:hover {
+#register .register--btn:hover {
     background-color: #1b682b;
     color: #fff;
 }
 
-#login .redirect {
+#register .redirect {
     padding-bottom: 20px;
 }
 
-#login .redirect a {
+#register .redirect a {
     color: #7eb2db;
     text-decoration-color: #7eb2db;
     padding-left: 2px;

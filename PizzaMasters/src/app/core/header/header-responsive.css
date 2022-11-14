@@ -1,0 +1,13 @@
+@media screen and (min-width: 1900px) and (min-height: 1000px) {
+    #header {
+        max-height: 200px;
+    }
+
+    #header .logo-img {
+        width: 7vw;
+    }
+
+    .nav .list-item {
+        font-size: 2.5rem;
+    }
+}

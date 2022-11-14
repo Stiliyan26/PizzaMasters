@@ -1,0 +1,60 @@
+@media screen and (min-width: 1900px) and (min-height: 1000px) {
+    .form--container {
+        padding-top: 200px;
+    }
+
+    #login {
+        min-height: 600px;
+    }
+
+    #login .input--info {
+        padding-bottom: 30px;
+    }
+
+    #login .title {
+        height: 120px;
+        font-size: 3rem;
+        margin-bottom: 40px;
+    }
+
+    #login .label {
+        font-size: 1.8rem;
+        padding-bottom: 7px;
+    }
+
+    #login .inp--container {
+        height: 80px;
+        width: 600px;
+    }
+
+    #login .icon {
+        font-size: 30px;
+        padding-left: 30px;
+        padding-top: 22px;
+    }
+
+    #login .inp {
+        font-size: 2rem;
+        padding-left: 20px;
+    }
+
+    #login .login--btn {
+        width: 600px;
+        padding: 20px;
+        font-size: 1.6rem;
+        margin-top: 30px;
+    }
+
+    #login .redirect {
+        padding-bottom: 40px;
+    }
+
+    #login .redirect {
+        padding-bottom: 30px;
+        font-size: 1.6rem;
+    }
+
+    #login .redirect a {
+        padding-left: 5px;
+    }
+}

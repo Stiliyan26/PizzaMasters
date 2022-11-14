@@ -6,7 +6,7 @@ footer {
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    position: sticky;
+    /* position: sticky; */
     left: 0px;
     bottom: 0px;
     z-index: 2;
@@ -57,10 +57,4 @@ footer {
 
 .social-media .social .fa-youtube {
     color: #FF0000;
-}
-
-@media only screen and (min-height: 1000px)  and (min-width: 1900px) {
-    footer {
-        font-size: 30px;
-    }
 }
