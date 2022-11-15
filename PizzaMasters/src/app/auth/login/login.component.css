@@ -1,4 +1,4 @@
-.form--container {
+.login--form--container {
     padding-top: 100px;
 }
 
@@ -16,6 +16,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+#login .title--container {
+    position: relative;
+}
+
+#login .title--container .title--image {
+    width: 80px;
+    position: absolute;
+    background-color: #556080;
+    color: black;
+    border-radius: 100%;
+    padding: 18px 0px;
+    top: -20px;
+    right: -10px;
 }
 
 #login .title {
