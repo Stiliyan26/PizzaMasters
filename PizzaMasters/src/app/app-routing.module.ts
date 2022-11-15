@@ -18,6 +18,10 @@ const routes: Routes = [
         component: MenuComponent
     },
     {
+        path: 'user',
+        loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    },
+    {
         path: '**',
         component: PageNotFoundComponent
     }
