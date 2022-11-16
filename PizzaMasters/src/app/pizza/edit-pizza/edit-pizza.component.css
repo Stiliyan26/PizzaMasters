@@ -1,8 +1,9 @@
-.login--form--container {
-    padding-top: 70px;
+.edit--form--container {
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
-#login {
+#edit {
     background-color: #f2e8cf;
     width: 30%;
     margin: 0 auto;
@@ -11,32 +12,26 @@
     border-radius: 30px;
 }
 
-#login .form--info {
+#edit .title--container {
+    position: relative;
+}
+
+#edit .title--container .title--image {
+    position: absolute;
+    right: -40px;
+    top: -30px;
+    border-radius: 100%;
+    width: 120px;
+}
+
+#edit .form--info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-#login .title--container {
-    position: relative;
-}
-
-#login .title--container .title--image {
-    width: 80px;
-    position: absolute;
-    background-color: #6f5523;
-    color: black;
-    border: 1px solid black;
-    border-radius: 100%;
-    padding: 20px 0px;
-    top: -20px;
-    right: -10px;
-    font-size: 35px;
-    text-align: center;
-}
-
-#login .title {
+#edit .title {
     background-color: #31572c;
     height: 80px;
     width: 100%;
@@ -50,13 +45,13 @@
     border-top-right-radius: 20px;
 }
 
-#login .input--info {
+#edit .input--info {
     display: flex;
     flex-direction: column;
     padding-bottom: 20px;
 }
 
-#login .inp--container {
+#edit .inp--container {
     display: flex;
     justify-content: center;
     align-items: stretch;
@@ -64,11 +59,11 @@
     width: 400px;
 }
 
-#login .label {
+#edit .label {
     padding-bottom: 5px;
 }
 
-#login .inp {
+#edit .inp {
     width: 100%;
     padding-left: 10px;
     border-top-right-radius: 20px;
@@ -76,11 +71,11 @@
     background-color: #efefef;
 }
 
-#login .inp::placeholder {
+#edit .inp::placeholder {
     padding-left: 5px;
 }
 
-#login .icon {
+#edit .icon {
     width: 15%;
     height: 100%;
     /* background-color: #bc4749; */
@@ -92,7 +87,7 @@
     padding-top: 15px;
 }
 
-#login .login--btn {
+#edit .edit--btn {
     background-color: #31572c;
     width: 400px;
     font-size: 1.2rem;
@@ -102,27 +97,43 @@
     margin-top: 20px;
     color: #f2e8cf;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     transition: 0.3s;
     cursor: pointer;
 }
 
-#login .login--btn:hover {
+#edit .edit--btn:hover {
     background-color: #1b682b;
     color: #fff;
 }
 
-#login .redirect {
+#edit .redirect {
     padding-bottom: 20px;
 }
 
-#login .redirect a {
+#edit .redirect a {
     color: #7eb2db;
     text-decoration-color: #7eb2db;
     padding-left: 2px;
 }
 
-#login .error {
+
+#edit .textarea--container {
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+#edit .textarea {
+    height: 120px;
+    border-bottom-left-radius: 20px;
+    padding: 10px;
+}
+
+#edit .fa-dollar-sign {
+    padding-left: 25px;
+}
+
+#edit .error {
     text-align: left;
     border-radius: 0.3em;
     color: #e5272a;
@@ -130,12 +141,16 @@
     padding-left: 10px;
 }
 
-#login .error--title {
-    text-align: left;
+#edit .error--title {
     border-radius: 0.3em;
     color: #e5272a;
     padding-top: 10px;
     text-align: center;
     padding-bottom: 10px;
     font-size: 1.1rem;
+}
+
+#edit .error--textbox--container {
+    padding-bottom: 20px;
+    width: 400px;
 }

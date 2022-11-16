@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { PizzaRoutingModule } from './pizza-routing.module';
 import { MenuComponent } from './menu/menu.component';
 import { CreatePizzaComponent } from './create-pizza/create-pizza.component';
+import { EditPizzaComponent } from './edit-pizza/edit-pizza.component';
 
 
 @NgModule({
   declarations: [
     MenuComponent,
-    CreatePizzaComponent
+    CreatePizzaComponent,
+    EditPizzaComponent
   ],
   imports: [
     CommonModule,

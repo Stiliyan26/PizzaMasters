@@ -1,6 +1,11 @@
 <div class="register--form--container">
     <form id="register" action="">
-        <h2 class="title">Register Form</h2>
+
+        <div class="title--container">
+            <i class="fa-solid fa-user title--image"></i>
+            <h2 class="title">Register Form</h2>
+        </div>
+
 
         <div class="form--info">
             <div class="input--info">
@@ -10,6 +15,9 @@
                     <i class="fa-solid fa-user icon"></i>
                     <input class="inp" type="text" placeholder="Type your username">
                 </div>
+
+                <!-- <p class="error">Username is required!</p> -->
+                <p class="error">Username must be at least 5 characters!</p>
             </div>
 
             <div class="input--info">
@@ -19,6 +27,9 @@
                     <i class="fa-solid fa-envelope icon"></i>
                     <input class="inp" type="email" placeholder="Type your email">
                 </div>
+
+                <p class="error">Email is required!</p>
+                <!-- <p class="error">Email is not valid!</p> -->
             </div>
 
             <div class="input--info">
@@ -28,6 +39,9 @@
                     <i class="fa-solid fa-lock icon"></i>
                     <input class="inp" type="password" placeholder="Type your password">
                 </div>
+
+                <!-- <p class="error">Password is required!</p> -->
+                <p class="error">Password must be at least 5 characters!</p>
             </div>
 
             <div class="input--info">
@@ -37,6 +51,9 @@
                     <i class="fa-solid fa-lock icon"></i>
                     <input class="inp" type="password" placeholder="Confirm your password">
                 </div>
+
+                <!-- <p class="error">Password is required!</p> -->
+                <p class="error">Confirm Password does not match password!</p>
             </div>
 
             <button class="register--btn">register</button>

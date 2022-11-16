@@ -1,73 +1,89 @@
 @media screen and (min-width: 1900px) and (min-height: 1000px) {
-    .register--form--container {
+    .create--form--container {
         padding-top: 80px;
     }
 
-    #register {
+    #create {
         min-height: 600px;
     }
 
-    #register .input--info {
+    #create .input--info {
         padding-bottom: 30px;
     }
 
-    #register .title {
+    #create .title {
         height: 120px;
         font-size: 3rem;
         margin-bottom: 40px;
     }
 
-    #register .label {
+    #create .label {
         font-size: 1.8rem;
         padding-bottom: 7px;
     }
 
-    #register .inp--container {
+    #create .inp--container {
         height: 80px;
         width: 600px;
     }
 
-    #register .icon {
+    #create .icon {
         font-size: 30px;
         padding-left: 30px;
         padding-top: 22px;
     }
 
-    #register .inp {
+    #create .inp {
         font-size: 2rem;
         padding-left: 20px;
     }
 
-    #register .register--btn {
+    #create .create--btn {
         width: 600px;
         padding: 20px;
         font-size: 1.6rem;
         margin-top: 30px;
     }
 
-    #register .redirect {
+    #create .redirect {
         padding-bottom: 40px;
     }
 
-    #register .redirect {
+    #create .redirect {
         padding-bottom: 30px;
         font-size: 1.6rem;
     }
 
-    #register .redirect a {
+    #create .redirect a {
         padding-left: 5px;
     }
 
-    #register .error {
+    #create .textarea--container {
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    #create .textarea {
+        height: 180px;
+        border-bottom-left-radius: 20px;
+        padding: 10px;
+    }
+
+    #create .title--container .title--image { 
+        width: 160px;
+    }
+
+    #create .error--title {
+        font-size: 2.1rem;
+        padding-bottom: 15px;
+    }
+
+    #create .error {
         font-size: 1.8rem;
         padding-top: 15px;
     }
 
-    #register .title--container .title--image {
-        width: 120px;
-        font-size: 55px;
-        padding: 27px 0px;
-        text-align: center;
-        top: -30px;
+    #create .error--textbox--container {
+        padding-top: 15px;
     }
-}
+}   

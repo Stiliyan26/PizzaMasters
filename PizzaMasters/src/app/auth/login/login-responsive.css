@@ -1,6 +1,6 @@
 @media screen and (min-width: 1900px) and (min-height: 1000px) {
     .login--form--container {
-        padding-top: 200px;
+        padding-top: 140px;
     }
 
     #login {
@@ -56,5 +56,24 @@
 
     #login .redirect a {
         padding-left: 5px;
+    }
+
+
+    #login .error--title {
+        font-size: 2.1rem;
+        padding-bottom: 15px;
+    }
+
+    #login .error {
+        font-size: 1.8rem;
+        padding-top: 15px;
+    }
+
+    #login .title--container .title--image {
+        width: 120px;
+        font-size: 55px;
+        padding: 27px 0px;
+        text-align: center;
+        top: -30px;
     }
 }

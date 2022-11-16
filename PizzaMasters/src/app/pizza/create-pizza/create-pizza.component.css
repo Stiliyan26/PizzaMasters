@@ -78,13 +78,13 @@
 #create .icon {
     width: 15%;
     height: 100%;
-    background-color: #bc4749;
+    /* background-color: #bc4749; */
+    background-color: #86662a;
     font-size: 18px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     padding-left: 22px;
     padding-top: 15px;
-    color: #f2e8cf;
 }
 
 #create .create--btn {
@@ -133,3 +133,24 @@
     padding-left: 25px;
 }
 
+#create .error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #e5272a;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#create .error--title {
+    border-radius: 0.3em;
+    color: #e5272a;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+#create .error--textbox--container {
+    padding-bottom: 20px;
+    width: 400px;
+}

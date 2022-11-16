@@ -1,9 +1,11 @@
 <div class="login--form--container">
     <form id="login" action="">
         <div class="title--container">
-            <img class="title--image" src="../../../assets/images/authForm.png" alt="">
+            <i class="fa-solid fa-user title--image"></i>
             <h2 class="title">Login Form</h2>
         </div>
+
+        <p class="error--title">Email or password is incorrect!</p>
 
         <div class="form--info">
             <div class="input--info">
@@ -13,6 +15,9 @@
                     <i class="fa-solid fa-user icon"></i>
                     <input class="inp" type="text" placeholder="Type your email">
                 </div>
+
+                <p class="error">Email is required!</p>
+                <!-- <p class="error">Email is not valid!</p> -->
             </div>
 
             <div class="input--info">
@@ -22,6 +27,9 @@
                     <i class="fa-solid fa-lock icon"></i>
                     <input class="inp" type="text" placeholder="Type your password">
                 </div>
+
+                <!-- <p class="error">Password is required!</p> -->
+                <p class="error">Password must be at least 5 characters!</p>
             </div>
 
             <button class="login--btn">Login</button>

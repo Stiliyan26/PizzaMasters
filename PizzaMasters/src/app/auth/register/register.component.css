@@ -19,6 +19,24 @@
     align-items: center;
 }
 
+#register .title--container {
+    position: relative;
+}
+
+#register .title--container .title--image {
+    width: 80px;
+    position: absolute;
+    background-color: #6f5523;
+    color: black;
+    border: 1px solid black;
+    border-radius: 100%;
+    padding: 20px 0px;
+    top: -20px;
+    right: -10px;
+    font-size: 35px;
+    text-align: center;
+}
+
 #register .title {
     background-color: #31572c;
     height: 80px;
@@ -66,7 +84,7 @@
 #register .icon {
     width: 15%;
     height: 100%;
-    background-color: #bc4749;
+    background-color: #86662a;
     font-size: 18px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -102,4 +120,22 @@
     color: #7eb2db;
     text-decoration-color: #7eb2db;
     padding-left: 2px;
+}
+
+#register .error {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #e5272a;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+#register .error--title {
+    text-align: left;
+    border-radius: 0.3em;
+    color: #e5272a;
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 1.1rem;
 }

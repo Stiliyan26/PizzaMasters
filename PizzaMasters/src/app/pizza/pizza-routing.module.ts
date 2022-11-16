@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { CreatePizzaComponent } from "./create-pizza/create-pizza.component";
+import { EditPizzaComponent } from "./edit-pizza/edit-pizza.component";
 import { MenuComponent } from "./menu/menu.component";
 
 const routes: Routes = [
@@ -10,6 +11,10 @@ const routes: Routes = [
     {
         path: 'create',
         component: CreatePizzaComponent
+    },
+    {
+        path: 'edit',
+        component: EditPizzaComponent
     }
 ]
 
