@@ -1,0 +1,128 @@
+.details--container {
+    padding-top: 100px;
+}
+
+#details-card {
+    width: 60%;
+    background-color: #f2e8cf;
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+}
+
+#details-card .right,
+#details-card .left {
+    flex-basis: 50%;
+}
+
+#details-card .img {
+    background-position: cover;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#details-card .info {
+    text-align: center;
+    padding: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+#details-card .info--title {
+    color: #3080a9;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#details-card .info--divider {
+    height: 1px;
+    background-color: #db2323;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#details-card .info--desc {
+    color: #838181;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#details-card .size--container {
+    position: relative;
+    padding-bottom: 5px;
+}
+
+#details-card .size {
+    position: absolute;
+    left: -10px;
+    top: -5px;
+    font-size: 1rem;
+}
+
+#details-card .info--size {
+    color: #bc4749;
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+#details-card .info--price {
+    font-size: 1.2rem;
+}
+
+#details-card .order--btn {
+    position: absolute;
+    bottom: 20px;
+    padding: 10px;
+    background-color: #609e29;
+    color: #f2e8cf;
+    width: 80%;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+#details-card .order--btn:hover,
+#details-card .edit--btn:hover {
+    background-color: #43810e;
+    color: #fff;
+}
+
+#details-card .owenr--btn {
+    display: flex;
+    gap: 10px;
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+}
+
+#details-card .edit--btn,
+#details-card .delete--btn {
+    width: 100%;
+    padding: 10px;
+    flex-basis: 50%;
+    font-size: 1rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #f2e8cf;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#details-card .edit--btn {
+    background-color: #609e29;
+}
+
+#details-card .delete--btn {
+    background-color: #bc4749;
+}
+
+#details-card .delete--btn:hover {
+    color: #fff;
+    background-color: #e02225;
+}

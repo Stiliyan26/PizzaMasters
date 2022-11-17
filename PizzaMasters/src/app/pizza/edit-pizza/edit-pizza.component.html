@@ -11,7 +11,7 @@
 
                 <div class="inp--container">
                     <i class="fa-regular fa-image icon"></i>
-                    <input class="inp" type="text" placeholder="Add an image">
+                    <input class="inp" type="text" placeholder="Add an image" value="/assets/img/picrute.png">
                 </div>
 
                 <!-- <p class="error">Image is required!</p> -->
@@ -22,7 +22,7 @@
 
                 <div class="inp--container">
                     <i class="fa-solid fa-pizza-slice icon"></i>
-                    <input class="inp" type="text" placeholder="Give your pizza a name">
+                    <input class="inp" type="text" placeholder="Give your pizza a name" value="Peperoni">
                 </div>
 
                 <!-- <p class="error">Name is required!</p>
@@ -34,7 +34,14 @@
 
                 <div class="inp--container">
                     <i class="fa-solid fa-file-signature icon"></i>
-                    <textarea class="inp textarea" type="text" placeholder="Write the required ingredients"></textarea>
+                    <textarea class="inp textarea" type="text" placeholder="Write the required ingredients">
+                        Pepperoni is essentially an American version of salami, something close to what
+                Italians might call salame
+                piccante, a generic term that means “spicy salami.” It's made from beef and cured pork mixed together
+                and
+                then seasoned with a blend that usually includes paprika, garlic, black pepper, crushed red pepper,
+                cayenne
+                    </textarea>
                 </div>
             </div>
 
@@ -43,13 +50,30 @@
                 <p class="error err--textbox">Ingredients info must be at least 10 characters!</p>
             </div> -->
 
+            <div class="input--info">
+                <label class="label" for="">Size</label>
+
+                <div class="inp--container">
+                    <i class="fa-solid fa-pizza-slice icon"></i>
+                    <select class="inp" name="" id="">
+                        <option value=""></option>
+                        <option value="Average">Average</option>
+                        <option value="Large">Large</option>
+                        <option value="Jumbo">Jumbo</option>
+                    </select>
+                </div>
+
+                <p class="error">Size is required!</p>
+                <!-- <p class="error">Price must be positve number!</p> -->
+            </div>
+
 
             <div class="input--info">
                 <label class="label" for="">Price</label>
 
                 <div class="inp--container">
                     <i class="fa-solid fa-dollar-sign icon"></i>
-                    <input class="inp" type="text" placeholder="Add price">
+                    <input class="inp" type="text" placeholder="Add price" value="20">
                 </div>
 
                 <!-- <p class="error">Price is required!</p>

@@ -4,7 +4,9 @@
     }
 
     .pizza--info .pizza--divider {
-        height: 3px;
+        height: 2px;
+        margin-top: 10px;
+        margin-bottom: 20px;
     }
 
     .pizza--info .pizza--desc {

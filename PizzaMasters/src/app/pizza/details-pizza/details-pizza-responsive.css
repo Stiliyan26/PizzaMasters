@@ -1,0 +1,35 @@
+@media only screen and (min-width: 1900px) and (min-height: 1000px) {
+    .details--container {
+        padding-top: 200px;
+    }
+
+    #details-card .info--title {
+        font-size: 3rem;
+    }
+
+    #details-card .info--desc {
+        font-size: 2rem;
+    }
+
+    #details-card .info--size {
+        font-size: 5rem;
+    }
+
+    #details-card .size {
+        font-size: 1.7rem;
+    }
+
+    #details-card .info--price {
+        font-size: 2rem;
+        padding-bottom: 60px;
+    }
+
+    #details-card .order--btn {
+        font-size: 2rem;
+    }
+
+    #details-card .edit--btn,
+    #details-card .delete--btn {
+        font-size: 1.5rem;
+    }
+}

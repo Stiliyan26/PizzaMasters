@@ -39,9 +39,11 @@
 }
 
 .pizza--info .pizza--divider {
-    background-color: red;
-    height: 2px;
+    background-color: #db2323;
+    height: 1px; 
     width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .pizza--info .pizza--desc {
@@ -51,6 +53,7 @@
 }
 
 .pizza--info .order--btn {
+    text-align: center;
     margin-top: 3rem;
     background-color: #609e29;
     width: 90%;
@@ -60,10 +63,11 @@
     color: #f2e8cf;
     text-transform: uppercase;
     font-weight: bold;
-    cursor: pointer;
     transition: 0.3s;
     position: absolute;
     bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .pizza--info .order--btn:hover {

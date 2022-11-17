@@ -1,5 +1,10 @@
 @media only screen and (min-width: 1900px) and (min-height: 1000px) {
-    footer {
+    #footer {
         font-size: 30px;
+    }
+
+    #footer .info .row, 
+    #footer .social-media .social  {
+        gap: 20px;
     }
 }

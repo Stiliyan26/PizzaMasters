@@ -1,24 +1,28 @@
-footer {
+#footer {
     min-height: 50px;
     width: 100%;
     background-color: #386641;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
     /* position: sticky; */
     left: 0px;
     bottom: 0px;
     z-index: 2;
+    position: relative;
 }
 
-.follow {
+#footer .follow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#footer .follow--title {
     color: #f2e8cf;
     text-shadow: 2px 2px #29431b;
     padding-top: 10px;
 }
 
-.social-media {
+#footer .social-media {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -26,7 +30,7 @@ footer {
     padding-left: 0px;
 }
 
-.social-media .social {
+#footer .social-media .social {
     display: flex;
     justify-content: center;
     gap: 5px;
@@ -34,27 +38,44 @@ footer {
     text-shadow: 2px 2px #29431b;
 }
 
-.social-media .social p {
+#footer .social-media .social p {
     color: #f2e8cf;
     margin-bottom: 10px;
 }
 
-.social-media .social i {
+#footer .social-media .social i {
     padding: 5px;
 }
 
-.social-media .social .fa-twitter {
+#footer .social-media .social .fa-twitter {
     color: #1DA1F2;
 }
 
-.social-media .social .fa-facebook {
+#footer .social-media .social .fa-facebook {
     color: #4267B2
 }
 
-.social-media .social .fa-instagram {
+#footer .social-media .social .fa-instagram {
     color: #405DE6;
 }
 
-.social-media .social .fa-youtube {
+#footer .social-media .social .fa-youtube {
     color: #FF0000;
+}
+
+#footer .info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    text-shadow: 2px 2px #29431b;
+    color: #f2e8cf;
+    padding-left: 10px;
+    position: absolute;
+    bottom: 10px;
+}
+
+#footer .info .row {
+    display: flex;
+    gap: 10px;
 }
