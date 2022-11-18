@@ -1,19 +1,30 @@
 @media only screen and (min-width: 1900px) and (min-height: 1000px) {
-    .pizza--info .pizza--title {
-        font-size: 2rem;
+    #menu .pizza--info .pizza--title {
+        font-size: 2.2rem;
     }
 
-    .pizza--info .pizza--divider {
+    #menu .pizza--info .pizza--divider {
         height: 2px;
         margin-top: 10px;
         margin-bottom: 20px;
     }
 
-    .pizza--info .pizza--desc {
-        font-size: 1.5rem;
+    #menu .pizza--info .pizza--desc {
+        font-size: 1.7rem;
     }
 
-    .pizza--info .order--btn {
+    #menu .pizza--info .order--btn {
         font-size: 30px;
+    }
+
+    /* Loading */
+
+    #menu--loading--container {
+        width: 1200px;
+        padding-top: 300px;
+    }
+
+    #menu--loading--container .loading {
+        font-size: 14rem;
     }
 }

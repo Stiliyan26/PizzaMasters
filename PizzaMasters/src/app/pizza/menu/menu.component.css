@@ -1,4 +1,4 @@
-.grid {
+#menu.grid {
     width: 80%;
     padding-top: 100px;
     padding-bottom: 100px;
@@ -8,25 +8,26 @@
     gap: 30px;
 }
 
-.card {
+#menu .card {
     background-color: #fff;
     border-radius: 30px;
     position: relative;
+    padding-bottom: 50px;
 }
 
-.card .img-container {
+#menu .card .img-container {
     width: 100%;
     height: 40%;
 }
 
-.card img {
+#menu .card img {
     width: 100%;
     height: 100%;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
 
-.pizza--info {
+#menu .pizza--info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,25 +35,25 @@
     padding: 20px;
 }
 
-.pizza--info .pizza--title {
+#menu .pizza--info .pizza--title {
     color: #3080a9;
 }
 
-.pizza--info .pizza--divider {
+#menu .pizza--info .pizza--divider {
     background-color: #db2323;
-    height: 1px; 
+    height: 1px;
     width: 100%;
     margin-top: 5px;
     margin-bottom: 15px;
 }
 
-.pizza--info .pizza--desc {
+#menu .pizza--info .pizza--desc {
     text-indent: 1rem;
     color: #838181;
     padding-bottom: 50px;
 }
 
-.pizza--info .order--btn {
+#menu .pizza--info .order--btn {
     text-align: center;
     margin-top: 3rem;
     background-color: #609e29;
@@ -70,7 +71,77 @@
     cursor: pointer;
 }
 
-.pizza--info .order--btn:hover {
+#menu .pizza--info .order--btn:hover {
     background-color: #43810e;
     color: #fff;
+}
+
+/* Loading */
+
+#menu--loading--container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+#menu--loading--container .loading {
+    font-size: 9rem;
+    color: #386641;
+    padding-right: 20px;
+}
+
+#menu--loading--container .dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1rem;
+    animation: scaling 1.5s ease-in-out infinite;
+    align-self: flex-end;
+    margin-bottom: 50px;
+}
+
+@keyframes scaling {
+
+    0%,
+    100% {
+        transform: scale(0.2);
+        background-color: #90a955;
+    }
+
+    40% {
+        transform: scale(1);
+        background-color: #4f772d;
+    }
+
+    50% {
+        transform: scale(1);
+        background-color: #31572c;
+    }
+}
+
+#menu--loading--container .dot:nth-child(0) {
+    animation-delay: 0s;
+}
+
+
+#menu--loading--container .dot:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+#menu--loading--container .dot:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+
+#menu--loading--container .dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+#menu--loading--container .dot:nth-child(4) {
+    animation-delay: 0.8s;
 }
