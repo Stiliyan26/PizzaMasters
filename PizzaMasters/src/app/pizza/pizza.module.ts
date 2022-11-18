@@ -6,6 +6,7 @@ import { CreatePizzaComponent } from './create-pizza/create-pizza.component';
 import { EditPizzaComponent } from './edit-pizza/edit-pizza.component';
 import { DetailsPizzaComponent } from './details-pizza/details-pizza.component';
 import { RouterModule } from '@angular/router';
+import { MyPostsComponent } from './my-posts/my-posts.component';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
     MenuComponent,
     CreatePizzaComponent,
     EditPizzaComponent,
-    DetailsPizzaComponent
+    DetailsPizzaComponent,
+    MyPostsComponent
   ],
   imports: [
     CommonModule,

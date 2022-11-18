@@ -1,0 +1,163 @@
+.myposts-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myposts-container .myposts--title {
+    color: #b5bb73;
+    font-size: 3rem;
+    font-family: 'Roboto';
+    padding-top: 50px;
+    border-bottom: 4px dotted #bc4749;
+    width: 300px;
+    text-align: center;
+}
+
+#myposts.grid {
+    width: 80%;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+#myposts .card {
+    background-color: #fff;
+    border-radius: 30px;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+#myposts .card .img-container {
+    width: 100%;
+    height: 40%;
+}
+
+#myposts .card img {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#myposts .pizza--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#myposts .pizza--info .pizza--title {
+    color: #3080a9;
+}
+
+#myposts .pizza--info .pizza--divider {
+    background-color: #db2323;
+    height: 1px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#myposts .pizza--info .pizza--desc {
+    text-indent: 1rem;
+    color: #838181;
+    padding-bottom: 50px;
+}
+
+#myposts .pizza--info .order--btn {
+    text-align: center;
+    margin-top: 3rem;
+    background-color: #609e29;
+    width: 90%;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 30px;
+    color: #f2e8cf;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+    position: absolute;
+    bottom: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#myposts .pizza--info .order--btn:hover {
+    background-color: #43810e;
+    color: #fff;
+}
+
+/* Loading */
+
+#myposts--loading--container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 800px;
+    margin: 0 auto;
+    padding-top: 200px;
+}
+
+#myposts--loading--container .loading {
+    font-size: 9rem;
+    color: #386641;
+    padding-right: 20px;
+}
+
+#myposts--loading--container .dot {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 1rem;
+    animation: scaling 1.5s ease-in-out infinite;
+    align-self: flex-end;
+    margin-bottom: 50px;
+}
+
+@keyframes scaling {
+
+    0%,
+    100% {
+        transform: scale(0.2);
+        background-color: #90a955;
+    }
+
+    40% {
+        transform: scale(1);
+        background-color: #4f772d;
+    }
+
+    50% {
+        transform: scale(1);
+        background-color: #31572c;
+    }
+}
+
+#myposts--loading--container .dot:nth-child(0) {
+    animation-delay: 0s;
+}
+
+
+#myposts--loading--container .dot:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+#myposts--loading--container .dot:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+
+#myposts--loading--container .dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+#myposts--loading--container .dot:nth-child(4) {
+    animation-delay: 0.8s;
+}

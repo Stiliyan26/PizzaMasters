@@ -1,0 +1,39 @@
+@media only screen and (min-width: 1900px) and (min-height: 1000px) {
+
+    .myposts-container .myposts--title {
+        font-size: 5rem;
+        width: 500px;
+        padding-top: 70px;
+        padding-bottom: 10px;
+        border-bottom: 6px dotted #bc4749;
+    }
+
+    #myposts .pizza--info .pizza--title {
+        font-size: 2.2rem;
+    }
+
+    #myposts .pizza--info .pizza--divider {
+        height: 2px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    #myposts .pizza--info .pizza--desc {
+        font-size: 1.7rem;
+    }
+
+    #myposts .pizza--info .order--btn {
+        font-size: 30px;
+    }
+
+    /* Loading */
+
+    #myposts--loading--container {
+        width: 1200px;
+        padding-top: 300px;
+    }
+
+    #myposts--loading--container .loading {
+        font-size: 14rem;
+    }
+}

@@ -3,6 +3,7 @@ import { CreatePizzaComponent } from "./create-pizza/create-pizza.component";
 import { DetailsPizzaComponent } from "./details-pizza/details-pizza.component";
 import { EditPizzaComponent } from "./edit-pizza/edit-pizza.component";
 import { MenuComponent } from "./menu/menu.component";
+import { MyPostsComponent } from "./my-posts/my-posts.component";
 
 const routes: Routes = [
     {
@@ -20,6 +21,10 @@ const routes: Routes = [
     {
         path: 'details',
         component: DetailsPizzaComponent
+    },
+    {
+        path: 'myposts',
+        component: MyPostsComponent
     }
 ]
 
