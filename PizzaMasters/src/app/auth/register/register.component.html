@@ -1,9 +1,9 @@
 <div class="register--form--container">
-    <form id="register" action="">
+    <form id="register" action="" [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()">
 
         <div class="title--container">
             <i class="fa-solid fa-user title--image"></i>
-            <h2 class="title">Register Form</h2>
+            <h2 class="title">Register Form {{(isRegisterPending$ | async)}}</h2>
         </div>
 
 
@@ -12,53 +12,96 @@
                 <label class="label" for="">Username</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-user icon"></i>
-                    <input class="inp" type="text" placeholder="Type your username">
+                    <i [class.input--err]="showInvalidClass('username', registerFormGroup)"
+                        class="fa-solid fa-user icon"></i>
+                    <input formControlName="username" class="inp" type="text" placeholder="Type your username">
                 </div>
 
-                <!-- <p class="error">Username is required!</p> -->
-                <p class="error">Username must be at least 5 characters!</p>
+                <ng-container *ngIf="shouldShowErrorForControl('username', registerFormGroup)">
+                    <p *ngIf="registerFormGroup.controls['username'].errors['required']" class="error">
+                        Username is required!
+                    </p>
+                    <p *ngIf="registerFormGroup.controls['username'].errors['minlength']" class="error">
+                        Username must be at least 5 characters!
+                    </p>
+                </ng-container>
             </div>
 
             <div class="input--info">
                 <label class="label" for="">Email</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-envelope icon"></i>
-                    <input class="inp" type="email" placeholder="Type your email">
+                    <i [class.input--err]="showInvalidClass('email', registerFormGroup)"
+                        class="fa-solid fa-envelope icon"></i>
+                    <input formControlName="email" class="inp" type="email" placeholder="Type your email">
                 </div>
 
-                <p class="error">Email is required!</p>
-                <!-- <p class="error">Email is not valid!</p> -->
+                <ng-container *ngIf="shouldShowErrorForControl('email', registerFormGroup)">
+                    <p *ngIf="registerFormGroup.controls['email'].errors['required']" class="error">
+                        Email is required!
+                    </p>
+                    <p *ngIf="registerFormGroup.controls['email'].errors['email']" class="error">
+                        Email pattern is not valid!
+                    </p>
+                </ng-container>
+
+                <p *ngIf="!!emailIsTaken" class="error">
+                    {{emailIsTakenErrorMsg}}
+                </p>
             </div>
 
-            <div class="input--info">
-                <label class="label" for="">Password</label>
+            <ng-container formGroupName="passwords">
+                <div class="input--info">
+                    <label class="label" for="">Password</label>
 
-                <div class="inp--container">
-                    <i class="fa-solid fa-lock icon"></i>
-                    <input class="inp" type="password" placeholder="Type your password">
+                    <div class="inp--container">
+                        <i [class.input--err]="showInvalidClass('password', passwordsGroup)"
+                            class="fa-solid fa-lock icon"></i>
+                        <input formControlName="password" class="inp" type="password" placeholder="Type your password">
+                    </div>
+
+                    <ng-container *ngIf="shouldShowErrorForControl('password', passwordsGroup)">
+
+                        <p *ngIf="passwordsGroup.controls['password'].errors['required']" class="error">
+                            Password is required!
+                        </p>
+                        <p *ngIf="passwordsGroup.controls['password'].errors['minlength']" class="error">
+                            Password must be at least 5 characters!
+                        </p>
+
+                    </ng-container>
                 </div>
 
-                <!-- <p class="error">Password is required!</p> -->
-                <p class="error">Password must be at least 5 characters!</p>
-            </div>
+                <div class="input--info">
+                    <label class="label" for="">Confirm Password</label>
 
-            <div class="input--info">
-                <label class="label" for="">Confirm Password</label>
+                    <div class="inp--container">
+                        <i [class.input--err]="showInvalidClass('rePassword', passwordsGroup)"
+                            class="fa-solid fa-lock icon"></i>
+                        <input formControlName="rePassword" class="inp" type="password"
+                            placeholder="Confirm your password">
+                    </div>
 
-                <div class="inp--container">
-                    <i class="fa-solid fa-lock icon"></i>
-                    <input class="inp" type="password" placeholder="Confirm your password">
+                    <!-- <p class="error">Password is required!</p> -->
+                    <ng-container *ngIf="shouldShowErrorForControl('rePassword', passwordsGroup)">
+                        <p *ngIf="passwordsGroup.controls['password'].errors['required']" class="error">
+                            Confirm Password is required!
+                        </p>
+
+                        <p *ngIf="passwordsGroup.controls['rePassword'].errors['passwordMatch']" class="error">
+                            Confirm Password does not match password!
+                        </p>
+                    </ng-container>
                 </div>
+            </ng-container>
 
-                <!-- <p class="error">Password is required!</p> -->
-                <p class="error">Confirm Password does not match password!</p>
-            </div>
+            {{registerFormGroup.invalid | json}}
+            <button class="register--btn"
+                [disabled]="registerFormGroup.invalid">
+                Register
+            </button>
 
-            <button class="register--btn">register</button>
-
-            <p class="redirect">Already have an account? <a routerLink="/user/login">Login</a></p>
+            <p class=" redirect">Already have an account? <a routerLink="/user/login">Login</a></p>
         </div>
     </form>
 </div>

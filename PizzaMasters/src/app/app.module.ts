@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+import { StoreModule } from '@ngrx/store';
+import { HttpClientModule } from '@angular/common/http';
+import { PageModule } from './pages/page.module';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { FooterComponent } from './core/footer/footer.component';
 import { HeaderComponent } from './core/header/header.component';
-import { PageModule } from './pages/page.module';
-import { PizzaModule } from './pizza/pizza.module';
+import { IRootState } from './+store';
+import { currentUserReducer } from './+store/reducers';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,8 +20,13 @@ import { PizzaModule } from './pizza/pizza.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     CoreModule,
     PageModule,
+    HttpClientModule,
+    StoreModule.forRoot<IRootState>({
+      currentUser: currentUserReducer
+    }, {})
   ],
   providers: [],
   bootstrap: [
