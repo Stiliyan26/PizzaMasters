@@ -15,6 +15,11 @@ interface IRegisterUserData {
   rePassword: string
 }
 
+interface ILoginUserData {
+  email: string,
+  password: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -33,6 +38,11 @@ export class AuthService {
   register$(userData: IRegisterUserData): Observable<IUser> {
     return this.httpClient
       .post<IUser>(`${environment.apiUrl}/users/register`, userData);
+  }
+
+  login$(userData: ILoginUserData): Observable<IUser> {
+    return this.httpClient
+      .post<IUser>(`${environment.apiUrl}/users/login`, userData);
   }
 
   authenticate() {

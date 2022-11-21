@@ -6,7 +6,6 @@
             <h2 class="title">Register Form</h2>
         </div>
 
-
         <div class="form--info">
             <div class="input--info">
                 <label class="label" for="">Username</label>
@@ -31,7 +30,7 @@
                 <label class="label" for="">Email</label>
 
                 <div class="inp--container">
-                    <i [class.input--err]="showInvalidClass('email', registerFormGroup)"
+                    <i [class.input--err]="showInvalidClass('email', registerFormGroup) || !!emailIsTaken"
                         class="fa-solid fa-envelope icon"></i>
                     <input formControlName="email" class="inp" type="email" placeholder="Type your email">
                 </div>
@@ -61,14 +60,12 @@
                     </div>
 
                     <ng-container *ngIf="shouldShowErrorForControl('password', passwordsGroup)">
-
                         <p *ngIf="passwordsGroup.controls['password'].errors['required']" class="error">
                             Password is required!
                         </p>
                         <p *ngIf="passwordsGroup.controls['password'].errors['minlength']" class="error">
                             Password must be at least 5 characters!
                         </p>
-
                     </ng-container>
                 </div>
 

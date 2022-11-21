@@ -11,7 +11,30 @@ async function registerUser(username, email, password) {
         username,
         email,
         password
-    })
+    });
+
+    await user.save();
+
+    return user;
+}
+
+async function loginUser(email, password) {
+    const existing = await getUserByEmail(email);
+
+    if (!existing) {
+        throw new Error('User does not exist!');
+    }
+
+    if (password.trim() != existing.password.trim()) {
+        throw new Error('Email or Password is incorecct!');
+    }
+
+    const user = new User({
+        username: existing.username,
+        email,
+        password
+    });
+
 
     await user.save();
 
@@ -30,5 +53,6 @@ async function getProfileById(userId){
 
 module.exports = {
     registerUser,
+    loginUser,
     getProfileById
 }

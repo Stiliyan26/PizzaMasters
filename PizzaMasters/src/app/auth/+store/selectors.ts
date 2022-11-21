@@ -10,3 +10,12 @@ export const registerIsPendingSelector = createSelector(authSelector, (authState
 export const registerErrorMessageSelector = createSelector(authSelector, (authState: IAuthState) => {
     return authState.register.errorMessage;
 })
+
+
+export const loginIsPendingSelector = createSelector(authSelector, (authState: IAuthState) => {
+    return authState.login.isLoginPending;
+})
+
+export const loginErrorMessageSelector = createSelector(authSelector, (authState: IAuthState) => {
+    return authState.login.errorMessage;
+})

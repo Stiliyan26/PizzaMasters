@@ -1,35 +1,46 @@
 <div class="login--form--container">
-    <form id="login" action="">
+    <form id="login" action="" [formGroup]="loginFormGroup" (ngSubmit)="handleLogin()">
         <div class="title--container">
             <i class="fa-solid fa-user title--image"></i>
             <h2 class="title">Login Form</h2>
         </div>
 
-        <p class="error--title">Email or password is incorrect!</p>
+        <p *ngIf="!!userDoesnNotExist" class="error--title">{{userInfoIncorecct}}</p>
 
         <div class="form--info">
             <div class="input--info">
                 <label class="label" for="">Email</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-user icon"></i>
-                    <input class="inp" type="text" placeholder="Type your email">
+                    <i [class.input--err]="showInvalidClass('email', loginFormGroup) 
+                    || !!userDoesnNotExist" class="fa-solid fa-user icon"></i>
+                    <input formControlName="email" class="inp" type="text" placeholder="Type your email">
                 </div>
 
-                <p class="error">Email is required!</p>
-                <!-- <p class="error">Email is not valid!</p> -->
+                <ng-container *ngIf="shouldShowErrorForControl('email', loginFormGroup)">
+                    <p *ngIf="loginFormGroup.controls['email'].errors['required']" class="error">Email is required!</p>
+                    <p *ngIf="loginFormGroup.controls['email'].errors['email']" class="error">Email is not valid!</p>
+                </ng-container>
             </div>
 
             <div class="input--info">
                 <label class="label" for="">Password</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-lock icon"></i>
-                    <input class="inp" type="text" placeholder="Type your password">
+                    <i [class.input--err]="showInvalidClass('password', loginFormGroup)
+                    || !!userDoesnNotExist"
+                        class="fa-solid fa-lock icon"></i>
+                    <input formControlName="password" class="inp" type="password" placeholder="Type your password">
                 </div>
 
-                <!-- <p class="error">Password is required!</p> -->
-                <p class="error">Password must be at least 5 characters!</p>
+                <ng-container *ngIf="shouldShowErrorForControl('password', loginFormGroup)">
+                    <p *ngIf="loginFormGroup.controls['password'].errors['required']" class="error">
+                        Password is required!
+                    </p>
+                    <p *ngIf="loginFormGroup.controls['password'].errors['minlength']" class="error">
+                        Password must be at least 5 characters!
+                    </p>
+                </ng-container>
             </div>
 
             <button class="login--btn">Login</button>
