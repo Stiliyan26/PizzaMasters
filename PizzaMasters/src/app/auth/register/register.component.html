@@ -3,7 +3,7 @@
 
         <div class="title--container">
             <i class="fa-solid fa-user title--image"></i>
-            <h2 class="title">Register Form {{(isRegisterPending$ | async)}}</h2>
+            <h2 class="title">Register Form</h2>
         </div>
 
 
@@ -84,20 +84,19 @@
 
                     <!-- <p class="error">Password is required!</p> -->
                     <ng-container *ngIf="shouldShowErrorForControl('rePassword', passwordsGroup)">
-                        <p *ngIf="passwordsGroup.controls['password'].errors['required']" class="error">
+                        <p *ngIf="passwordsGroup.controls['rePassword'].errors['required']" class="error">
                             Confirm Password is required!
                         </p>
 
-                        <p *ngIf="passwordsGroup.controls['rePassword'].errors['passwordMatch']" class="error">
+                        <p *ngIf="!passwordsGroup.controls['rePassword'].errors['required'] && 
+                        passwordsGroup.controls['rePassword'].errors['passwordMatch']" class="error">
                             Confirm Password does not match password!
                         </p>
                     </ng-container>
                 </div>
             </ng-container>
 
-            {{registerFormGroup.invalid | json}}
-            <button class="register--btn"
-                [disabled]="registerFormGroup.invalid">
+            <button class="register--btn" [disabled]="registerFormGroup.invalid">
                 Register
             </button>
 

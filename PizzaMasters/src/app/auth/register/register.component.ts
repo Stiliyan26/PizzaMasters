@@ -9,6 +9,8 @@ import { registerIsPendingSelector } from '../+store/selectors';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { emailValidator, passwordMatch } from '../utils';
+import { IUser } from 'src/app/core/interfaces/user';
+import { StorageService } from 'src/app/core/storage.service';
 
 @Component({
   selector: 'app-register',
@@ -42,7 +44,7 @@ export class RegisterComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private store: Store<IAuthModuleState>,
-    private httpClient: HttpClient
+    private localStorage: StorageService
   ) { }
 
   ngOnInit(): void {
@@ -70,9 +72,12 @@ export class RegisterComponent implements OnInit {
 
     this.authService.register$(formData)
       .subscribe({
-        next: (data) => {
-          this.router.navigate(['/home']);
+        next: (user: IUser) => {
           this.emailIsTaken = false;
+          this.authService.handleLogin(user);
+          this.localStorage.setUserLocalStorage(user);
+
+          this.router.navigate(['/home']);
         },
         error: (err) => {
           this.emailIsTaken = err.error.map(err => err.msg == 'Email is already taken!');

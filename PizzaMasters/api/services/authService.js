@@ -22,6 +22,13 @@ async function getUserByEmail(email) {
     return await User.findOne({ email: new RegExp(`^${email}$`, 'i') });
 }
 
+async function getProfileById(userId){
+    const user = await User.findById(userId);
+
+    return user;
+}
+
 module.exports = {
     registerUser,
+    getProfileById
 }

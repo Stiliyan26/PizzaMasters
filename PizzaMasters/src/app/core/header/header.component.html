@@ -11,25 +11,29 @@
                 <a routerLink="/pizza/menu">Menu</a>
             </li>
 
-            <li class="list-item">
-                <a routerLink="/pizza/create">Create Pizza</a>
-            </li>
+            <ng-container *ngIf="!!(isLoggedIn$ | async)">
+                <li class="list-item">
+                    <a routerLink="/pizza/create">Create Pizza</a>
+                </li>
 
-            <li class="list-item">
-                <a routerLink="/pizza/myposts">My Posts</a>
-            </li>
+                <li class="list-item">
+                    <a routerLink="/pizza/myposts">{{(currentUser$ | async)?.username}} Posts</a>
+                </li>
+                <li class="list-item">
+                    <a (click)="logoutHandler()" href="javascript:void(0)">Logout</a>
+                </li>
+            </ng-container>
 
-            <li class="list-item">
-                <a routerLink="/user/login">Login</a>
-            </li>
 
-            <li class="list-item">
-                <a routerLink="/user/register">Register</a>
-            </li>
+            <ng-container *ngIf="!(isLoggedIn$ | async)">
+                <li class="list-item">
+                    <a routerLink="/user/login">Login</a>
+                </li>
 
-            <li class="list-item">
-                <a routerLink="#">Logout</a>
-            </li>
+                <li class="list-item">
+                    <a routerLink="/user/register">Register</a>
+                </li>
+            </ng-container>
         </ul>
     </nav>
 </header>
