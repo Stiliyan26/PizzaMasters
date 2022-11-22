@@ -12,8 +12,9 @@ import { HeaderComponent } from './core/header/header.component';
 import { IRootState } from './+store';
 import { currentUserReducer } from './+store/reducers';
 import { RouterModule } from '@angular/router';
-import { UserService } from './core/user.service';
 import { AuthService } from './auth.service';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthService } from './auth.service';
     HttpClientModule,
     StoreModule.forRoot<IRootState>({
       currentUser: currentUserReducer
-    }, {})
+    }, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   providers: [
     {

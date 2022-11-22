@@ -43,7 +43,7 @@
                 </ng-container>
             </div>
 
-            <button class="login--btn">Login</button>
+            <button class="login--btn" [disabled]="loginFormGroup.invalid">Login</button>
 
             <p class="redirect">Need an account? <a routerLink="/user/register">Register</a></p>
         </div>

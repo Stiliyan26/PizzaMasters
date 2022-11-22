@@ -4,6 +4,7 @@ const morgan = require('morgan');
 const cors = require('cors');
 
 const authController = require('./controllers/auth.js');
+const pizzaController = require('./controllers/pizza.js');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,7 +26,8 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/users', authController)
+app.use('/users', authController);
+app.use('/pizza', pizzaController);
 
 app.listen(PORT, () => {
     console.log('App is running on port http://localhost:3000');

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { registerUser, loginUser, getProfileById } = require('../services/authService.js');
+const { registerUser, loginUser } = require('../services/authService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/register', async (req, res) => {

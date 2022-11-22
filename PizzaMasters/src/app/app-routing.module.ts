@@ -1,6 +1,5 @@
 import { Routes, RouterModule } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
-import { MenuComponent } from "./pizza/menu/menu.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 
 const routes: Routes = [

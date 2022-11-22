@@ -1,5 +1,5 @@
 <div class="create--form--container">
-    <form id="create" action="">
+    <form #createPizzaForm="ngForm" (ngSubmit)="handleCreatePizza()" id="create" action="">
         <div class="title--container">
             <img class="title--image" src="../../../assets/images/pizzaform2.png" alt="">
             <h2 class="title">Create Pizza</h2>
@@ -10,45 +10,56 @@
                 <label class="label" for="">Image</label>
 
                 <div class="inp--container">
-                    <i class="fa-regular fa-image icon"></i>
-                    <input class="inp" type="text" placeholder="Add an image">
+                    <i [class.input--err]="image.touched && image.invalid" class="fa-regular fa-image icon"></i>
+                    <input #image="ngModel" class="inp" type="text" placeholder="Add an image" name="image" ngModel required>
                 </div>
 
-                <p class="error">Image is required!</p>
+                <ng-container *ngIf="image.touched && image.invalid">
+                    <p *ngIf="image.errors['required']" class="error">Image is required!</p>
+                </ng-container>
             </div>
 
             <div class="input--info">
                 <label class="label" for="">Name</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-pizza-slice icon"></i>
-                    <input class="inp" type="text" placeholder="Give your pizza a name">
+                    <i [class.input--err]="name.touched && name.invalid" class="fa-solid fa-pizza-slice icon"></i>
+                    <input #name="ngModel" class="inp" type="text" placeholder="Give your pizza a name" name="name" ngModel required
+                        minlength="5">
                 </div>
 
-                <!-- <p class="error">Name is required!</p> -->
-                <p class="error">Name must be at least 5 characters!</p> 
+                <ng-container *ngIf="name.touched && name.invalid">
+                    <p *ngIf="name.errors['required']" class="error">Name is required!</p>
+                    <p *ngIf="name.errors['minlength']" class="error">Name must be at least 5 characters!</p>
+                </ng-container>
             </div>
 
             <div class="input--info textarea--container">
                 <label class="label" for="">Ingredients</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-file-signature icon"></i>
-                    <textarea class="inp textarea" type="text" placeholder="Write the required ingredients"></textarea>
+                    <i [class.input--err]="ingredients.touched && ingredients.invalid" class="fa-solid fa-file-signature icon"></i>
+                    <textarea #ingredients="ngModel" class="inp textarea" type="text"
+                        placeholder="Write the required ingredients" name="ingredients" ngModel required
+                        minlength="10"></textarea>
                 </div>
             </div>
 
-            <div class="error--textbox--container">
-                <!-- <p class="error err--textbox">Ingredients info is required!</p> -->
-                <p class="error err--textbox">Ingredients info must be at least 10 characters!</p>
+            <div *ngIf="ingredients.touched && ingredients.invalid" class="error--textbox--container">
+                <p *ngIf="ingredients.errors['required']" class="error err--textbox">
+                    Ingredients info is required!
+                </p>
+                <p *ngIf="ingredients.errors['minlength']" class="error err--textbox">
+                    Ingredients info must be at least 10 characters!
+                </p>
             </div>
 
             <div class="input--info">
                 <label class="label" for="">Size</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-pizza-slice icon"></i>
-                    <select class="inp" name="" id="">
+                    <i [class.input--err]="size.touched && size.invalid" class="fa-solid fa-pizza-slice icon"></i>
+                    <select #size="ngModel" class="inp" name="size" ngModel required>
                         <option value="" disabled selected hidden>Please Choose...</option>
                         <option value="Average">Average</option>
                         <option value="Large">Large</option>
@@ -56,8 +67,11 @@
                     </select>
                 </div>
 
-                <p class="error">Size is required!</p>
-                <p class="error">Price must be positve number!</p>
+                <ng-container *ngIf="size.touched && size.invalid">
+                    <p class="error">
+                        Size is required!
+                    </p>
+                </ng-container>
             </div>
 
 
@@ -65,15 +79,22 @@
                 <label class="label" for="">Price</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-dollar-sign icon"></i>
-                    <input class="inp" type="text" placeholder="Add price">
+                    <i [class.input--err]="price.touched && price.invalid" class="fa-solid fa-dollar-sign icon"></i>
+                    <input #price="ngModel" class="inp" type="number" placeholder="Add price" name="price" ngModel
+                        required priceValidator>
                 </div>
 
-                <p class="error">Price is required!</p>
-                <!-- <p class="error">Price must be positve number!</p> -->
+                <ng-container *ngIf="price.touched && price.invalid">
+                    <p *ngIf="price.errors['required']" class="error">
+                        Price is required!
+                    </p>
+                    <p *ngIf="!price.errors['required'] && price.errors['price']" class="error">
+                        Price must be positve number!
+                    </p>
+                </ng-container>
             </div>
 
-            <button class="create--btn">Create</button>
+            <button class="create--btn" [disabled]="createPizzaForm.invalid">Create</button>
         </div>
     </form>
 </div>

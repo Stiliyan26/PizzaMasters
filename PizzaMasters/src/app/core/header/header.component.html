@@ -17,7 +17,7 @@
                 </li>
 
                 <li class="list-item">
-                    <a routerLink="/pizza/myposts">{{(currentUser$ | async)?.username}} Posts</a>
+                    <a routerLink="/pizza/myposts">{{(currentUser$ | async)?.username}}'s Posts</a>
                 </li>
                 <li class="list-item">
                     <a (click)="logoutHandler()" href="javascript:void(0)">Logout</a>
