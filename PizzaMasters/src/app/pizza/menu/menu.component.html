@@ -7,7 +7,12 @@
 </section>
 
 
-<section *ngIf="!(isLoading$ | async)" id="menu" class="grid">
+<ng-container *ngIf="allPizzas?.length == 0">
+    No Pizza yet
+</ng-container>
+
+
+<section *ngIf="!(isLoading$ | async) && allPizzas?.length != 0" id="menu" class="grid">
 
     <ng-container *ngFor="let pizza of allPizzas">
 
@@ -20,7 +25,7 @@
                 <h3 class="pizza--title">{{pizza.name}}</h3>
                 <div class="pizza--divider"></div>
                 <p class="pizza--desc">{{pizza.ingredients}}</p>
-                <a class="order--btn" routerLink="/pizza/details">Order</a>
+                <a class="order--btn" [routerLink]="['/pizza/menu', pizza._id]">Order</a>
             </div>
         </section>
         

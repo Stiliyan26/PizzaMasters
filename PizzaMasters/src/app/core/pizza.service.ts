@@ -22,4 +22,9 @@ export class PizzaService {
     return this.httpClient
       .get<IPizza[]>(`${environment.apiUrl}/pizza/menu`);
   }
+
+  loadPizzaById(pizzaId: string): Observable<IPizza> {
+      return this.httpClient
+        .get<IPizza>(`${environment.apiUrl}/pizza/menu/${pizzaId}`);
+  }
 }

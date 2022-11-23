@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { createPizza, getAllPizzas } = require('../services/pizzaService.js');
+const { createPizza, getAllPizzas, getPizzaById } = require('../services/pizzaService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/create', async (req, res) => {
@@ -11,7 +11,8 @@ router.post('/create', async (req, res) => {
             ingredients: req.body.pizzaData.ingredients,
             size: req.body.pizzaData.size,
             price: req.body.pizzaData.price,
-            ownerId: req.body.userId
+            ownerId: req.body.userId,
+            ordered: []
         }
 
         const pizza = await createPizza(pizzaData);
@@ -39,9 +40,19 @@ router.get('/menu', async (req, res) => {
     }
 });
 
-module.exports = router;
+router.get('/menu/:pizzaId', async (req, res) => {
+    try {
+        const pizzaId = req.params.pizzaId;
+        const pizza = await getPizzaById(pizzaId);
 
-// {
-//    pizzaData: { image: '', name: '', ingredients: '', size: '', price: '' },
-//    userId: '637ce48f18c1b4c245f69f0c'
-//  }
+        res.json(pizza);
+
+    } catch (err) {
+        const errors = mapErrors(err);
+
+        res.status(409)
+            .send(errors);
+    }
+})
+
+module.exports = router;

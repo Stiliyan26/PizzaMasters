@@ -6,6 +6,7 @@ export interface IPizza {
     size: string,
     price: number,
     ownerId: string,
+    ordered: string[]
     _id: string,
     __v: number
 }

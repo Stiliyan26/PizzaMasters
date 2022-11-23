@@ -21,7 +21,6 @@
 
     #details-card .info--price {
         font-size: 2rem;
-        padding-bottom: 60px;
     }
 
     #details-card .order--btn {
@@ -30,6 +29,6 @@
 
     #details-card .edit--btn,
     #details-card .delete--btn {
-        font-size: 1.5rem   ;
+        font-size: 1.5rem;
     }
 }

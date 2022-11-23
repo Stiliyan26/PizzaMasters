@@ -7,12 +7,19 @@ const createPizza = async (pizzaData) => {
 }
 
 const getAllPizzas = async () => {
-    const allPizzas = Pizza.find({}).lean();
-
+    const allPizzas = await Pizza.find({});
+    
     return allPizzas;
+}
+
+const getPizzaById = async (pizzaId) => {
+    const pizza = await Pizza.findById(pizzaId).lean();
+
+    return  pizza;
 }
 
 module.exports = {
     createPizza,
-    getAllPizzas
+    getAllPizzas,
+    getPizzaById
 }

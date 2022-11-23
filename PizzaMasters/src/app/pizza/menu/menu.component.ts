@@ -32,12 +32,14 @@ export class MenuComponent implements OnInit {
 
           setTimeout(() => {
             this.store.dispatch(endLoadingProcess());
-            this.store.dispatch(menuDataState({pizzas: allPizzasData}));
+            this.store.dispatch(menuDataState({ pizzas: allPizzasData }));
 
             this.allPizzas = allPizzasData;
           }, 1500);
+        },
+        error: (err) => {
+          console.log('Error:', err.error);
         }
       })
   }
-
 }

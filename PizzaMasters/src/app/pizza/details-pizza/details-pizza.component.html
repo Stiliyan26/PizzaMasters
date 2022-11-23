@@ -1,33 +1,34 @@
 <div class="details--container">
-    <section id="details-card">
-        <img class="img left" src="../../../assets/images/pizza2.jpg" alt="">
+    <section id="details-card" *ngIf="!!pizza">
+        <div class="img-container left">
+            <img class="img" src={{pizza.image}} alt="">
+        </div>
 
         <section class="info right">
-            <h2 class="info--title">Peperoni</h2>
+            <h2 class="info--title">{{pizza.name}}</h2>
             <div class="info--divider"></div>
-            <p class="info--desc">
-                2 cup all purpose flour.
-                100 gm processed cheese.
-                100 ml tomato ketchup.
-                4 mushroom.
-                1 tomato.
-                1/2 capsicum (green pepper)
-                2 onion.
-                1 teaspoon oregano.
-            </p>
+            <p class="info--desc">{{pizza.ingredients}}</p>
 
             <div class="size--container">
                 <p class="size">Size</p>
-                <p class="info--size">Average</p>
+                <p class="info--size">{{pizza.size}}</p>
             </div>
 
-            <p class="info--price">Only for 15 BGN</p>
-            <!-- <button class="order--btn">Order</button> -->
+            <p class="info--price">Only for {{pizza.price}} BGN</p>
 
-            <div class="owenr--btn">
-                <a class="edit--btn" routerLink="/pizza/edit">Edit</a>
-                <button class="delete--btn">Delete</button>
-            </div>
+            <ng-container *ngIf="(isLoggedIn$ | async)">
+
+                <ng-container *ngIf="canOrder && !isUserOwner" )>
+                    <button class="order--btn">Order</button>
+                </ng-container>
+
+                <div *ngIf="isUserOwner" class="owenr--btn">
+                    <a class="edit--btn" routerLink="/pizza/edit">Edit</a>
+                    <button class="delete--btn">Delete</button>
+                </div>
+
+            </ng-container>
+
         </section>
     </section>
 </div>

@@ -22,7 +22,7 @@ const routes: Routes = [
         component: EditPizzaComponent
     },
     {
-        path: 'details',
+        path: 'menu/:pizzaId',
         component: DetailsPizzaComponent
     },
     {

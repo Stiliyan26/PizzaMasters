@@ -32,11 +32,9 @@ async function loginUser(email, password) {
     const user = new User({
         username: existing.username,
         email,
-        password
+        password,
+        _id: existing._id
     });
-
-
-    await user.save();
 
     return user;
 }

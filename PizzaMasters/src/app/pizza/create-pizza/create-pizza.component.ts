@@ -36,7 +36,6 @@ export class CreatePizzaComponent implements OnInit {
       )
       .subscribe({
         next: (data) => {
-          console.log('front-end:', data);
 
           this.route.navigate(['/pizza/menu']);
         },
