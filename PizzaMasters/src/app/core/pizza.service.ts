@@ -17,4 +17,9 @@ export class PizzaService {
     return this.httpClient
       .post<IPizza>(`${environment.apiUrl}/pizza/create`, { pizzaData, userId });
   }
+
+  getAllPizzas$(): Observable<IPizza[]> {
+    return this.httpClient
+      .get<IPizza[]>(`${environment.apiUrl}/pizza/menu`);
+  }
 }

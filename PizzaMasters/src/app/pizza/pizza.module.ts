@@ -8,6 +8,9 @@ import { DetailsPizzaComponent } from './details-pizza/details-pizza.component';
 import { MyPostsComponent } from './my-posts/my-posts.component';
 import { FormsModule } from '@angular/forms';
 import { PriceValidatorDirective } from '../core/price.directive';
+import { StoreModule } from '@ngrx/store';
+import { IPizzaState } from './+store';
+import { menuReducer } from './+store/reducers';
 
 
 
@@ -18,12 +21,15 @@ import { PriceValidatorDirective } from '../core/price.directive';
     EditPizzaComponent,
     DetailsPizzaComponent,
     MyPostsComponent,
-    PriceValidatorDirective
+    PriceValidatorDirective,
   ],
   imports: [
     CommonModule,
     PizzaRoutingModule,
-    FormsModule
+    FormsModule,
+    StoreModule.forFeature<IPizzaState>('pizza', {
+      menu: menuReducer
+    })
   ]
 })
 export class PizzaModule { }

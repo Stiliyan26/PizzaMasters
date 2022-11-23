@@ -6,6 +6,13 @@ const createPizza = async (pizzaData) => {
     return await newPizza.save();
 }
 
+const getAllPizzas = async () => {
+    const allPizzas = Pizza.find({}).lean();
+
+    return allPizzas;
+}
+
 module.exports = {
-    createPizza
+    createPizza,
+    getAllPizzas
 }
