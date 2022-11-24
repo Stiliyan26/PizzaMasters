@@ -5,6 +5,11 @@ export interface IMenuState {
     pizzas: IPizza[]
 }
 
+export interface IDialogState {
+    viewDialog: boolean,
+}
+
 export interface IPizzaState {
-    menu: IMenuState
+    menu: IMenuState,
+    dialog: IDialogState
 }

@@ -1,3 +1,5 @@
+<app-delete-dialog *ngIf="(isDialogViewed$ | async)" [pizzaId]="pizza._id"></app-delete-dialog>
+
 <div class="details--container">
     <section id="details-card" *ngIf="!!pizza">
         <div class="img-container left">
@@ -7,14 +9,15 @@
         <section class="info right">
             <h2 class="info--title">{{pizza.name}}</h2>
             <div class="info--divider"></div>
-            <p class="info--desc">{{pizza.info}}</p>
+            <p class="info--desc">{{pizza.info}}</p>    
 
             <div class="size--container">
                 <p class="size">Size</p>
                 <p class="info--size">{{pizza.size}}</p>
             </div>
-
+             
             <p class="info--price">Only for {{pizza.price}} BGN</p>
+
 
             <ng-container *ngIf="(isLoggedIn$ | async)">
 
@@ -28,7 +31,7 @@
 
                 <div *ngIf="isUserOwner" class="owenr--btn">
                     <a class="edit--btn" routerLink="/pizza/edit">Edit</a>
-                    <button class="delete--btn">Delete</button>
+                    <button (click)="deletePizzaHandler()" class="delete--btn">Delete</button>
                 </div>
 
             </ng-container>

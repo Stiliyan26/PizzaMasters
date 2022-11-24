@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Store } from '@ngrx/store';
 import { BehaviorSubject, combineLatest, mergeMap, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IPizza } from 'src/app/core/interfaces/pizza';
 import { IUser } from 'src/app/core/interfaces/user';
 import { PizzaService } from 'src/app/core/pizza.service';
+import { startShowDialogProcess } from '../+store/actions';
+import { IPizzaModuleState } from '../+store/reducers';
 
 @Component({
   selector: 'app-details-pizza',
@@ -12,7 +15,7 @@ import { PizzaService } from 'src/app/core/pizza.service';
   styleUrls: ['./details-pizza.component.css', './details-pizza-responsive.css']
 })
 export class DetailsPizzaComponent implements OnInit {
-
+  isDialogViewed$ = this.store.select((pizzaState) => pizzaState.pizza.dialog.viewDialog);
   isLoggedIn$ = this.authService.isLoggedIn$;
 
   refereshPizzaRequest$ = new BehaviorSubject(undefined);
@@ -26,7 +29,8 @@ export class DetailsPizzaComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private pizzaService: PizzaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private store: Store<IPizzaModuleState>
   ) { }
 
   ngOnInit(): void {
@@ -61,8 +65,15 @@ export class DetailsPizzaComponent implements OnInit {
       .subscribe({
         next: () => {
           this.refereshPizzaRequest$.next(undefined);
-        }
+        },
+        error: (err) => {
+          console.log(err.error);
+        } 
       })
+  }
+
+  deletePizzaHandler() {
+    this.store.dispatch(startShowDialogProcess());
   }
 }
 

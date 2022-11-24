@@ -7,3 +7,8 @@ export const startLoadingProcess = createAction(`${menuDomain} Start menu loadin
 export const endLoadingProcess = createAction(`${menuDomain} End menu loading`);
 
 export const menuDataState = createAction(`${menuDomain} Menu state set`, props<{pizzas: IPizza[]}>());
+
+const dialogDomain = ['DeleteDialogComponent'];
+export const startShowDialogProcess = createAction(`${dialogDomain} Start dialog process`);
+
+export const endShowDialogProcess = createAction(`${dialogDomain} End dialog process`);

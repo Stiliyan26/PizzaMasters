@@ -1,7 +1,6 @@
 const router = require('express').Router();
 
-const { createPizza, getAllPizzas, getPizzaById, order } = require('../services/pizzaService.js');
-const { getProfileById } = require('../services/authService.js');
+const { createPizza, getAllPizzas, getPizzaById, order , deletePizzaById} = require('../services/pizzaService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/create', async (req, res) => {
@@ -78,5 +77,21 @@ router.put('/order/:pizzaId', async (req, res) => {
             .send(errors);
     }
 });
+
+router.delete('/delete/:pizzaId', async (req, res) =>{
+    try {
+        const pizzaId = req.params.pizzaId;
+
+        await deletePizzaById(pizzaId);
+        res.json('Animal deleted!');
+
+    } catch (err) {
+        const errors = mapErrors(err);
+        console.log(err);
+
+        res.status(409)
+            .send(errors);
+    }
+})
 
 module.exports = router;

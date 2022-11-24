@@ -10,7 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { PriceValidatorDirective } from '../core/price.directive';
 import { StoreModule } from '@ngrx/store';
 import { IPizzaState } from './+store';
-import { menuReducer } from './+store/reducers';
+import { dialogReducer, menuReducer } from './+store/reducers';
+import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 
 
 
@@ -22,13 +23,15 @@ import { menuReducer } from './+store/reducers';
     DetailsPizzaComponent,
     MyPostsComponent,
     PriceValidatorDirective,
+    DeleteDialogComponent,
   ],
   imports: [
     CommonModule,
     PizzaRoutingModule,
     FormsModule,
     StoreModule.forFeature<IPizzaState>('pizza', {
-      menu: menuReducer
+      menu: menuReducer,
+      dialog: dialogReducer
     })
   ]
 })

@@ -31,10 +31,14 @@ const order = async (currentPizza, userId) => {
     return await existingPizza.save();
 }
 
+const deletePizzaById = async (pizzaId) => {
+    await Pizza.findByIdAndDelete(pizzaId);
+}
 
 module.exports = {
     createPizza,
     getAllPizzas,
     getPizzaById,
-    order
+    order,
+    deletePizzaById
 }

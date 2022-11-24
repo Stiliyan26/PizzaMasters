@@ -32,4 +32,9 @@ export class PizzaService {
     return this.httpClient
       .put<void>(`${environment.apiUrl}/pizza/order/${pizzaId}`, { pizzaId, userId });
   }
+
+  deletePizzaById$(pizzaId: string): Observable<void> {
+    return this.httpClient
+      .delete<void>(`${environment.apiUrl}/pizza/delete/${pizzaId}`,);
+  }
 }

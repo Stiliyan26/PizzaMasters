@@ -1,7 +1,7 @@
 import { createReducer, on } from "@ngrx/store";
 import { IRootState } from "src/app/+store";
-import { IMenuState, IPizzaState } from ".";
-import { endLoadingProcess, menuDataState, startLoadingProcess } from "./actions";
+import { IDialogState, IMenuState, IPizzaState } from ".";
+import { endLoadingProcess, endShowDialogProcess, menuDataState, startLoadingProcess, startShowDialogProcess } from "./actions";
 
 
 const initialPizzaState = {
@@ -31,6 +31,26 @@ export const menuReducer = createReducer<IMenuState>(initialPizzaState,
             ...state,
             isLoading: false,
             pizzas: action.pizzas
+        }
+    })
+)
+
+const initDialogState = {
+    viewDialog: false
+}
+
+export const dialogReducer = createReducer<IDialogState>(initDialogState,
+    on(startShowDialogProcess, (state) => {
+        return {
+            ...state,
+            viewDialog: true
+        }
+    }),
+
+    on(endShowDialogProcess, (state) => {
+        return {
+            ...state,
+            viewDialog: false
         }
     })
 )

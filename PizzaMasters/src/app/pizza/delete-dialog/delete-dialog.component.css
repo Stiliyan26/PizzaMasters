@@ -1,0 +1,61 @@
+.dialog-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.dialog-container .info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4f772d;
+    padding: 20px 40px;
+    border-radius: 50px;
+}
+
+.dialog-container .message {
+    color: rgb(200, 200, 200);
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 10px;
+    border-bottom: 5px dotted #f2e8cf ;
+}
+
+.dialog-container .dialog-buttons {
+    display: flex;
+    gap: 5rem;
+}
+
+.dialog-container .del-button {
+    background-color: #bc4749;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #f2e8cf;
+}
+
+.dialog-container .cancel-button {
+    background-color: #6a47bc;
+    font-size: 2rem;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: #f2e8cf;
+}
+
+.dialog-container .del-button:hover {
+    transform: scale(1.1);
+}
+
+.dialog-container .cancel-button:hover {
+    transform: scale(1.1);
+}
