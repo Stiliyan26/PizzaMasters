@@ -7,8 +7,12 @@
 </section>
 
 
+
 <ng-container *ngIf="allPizzas?.length == 0">
-    No Pizza yet
+    <div id="no-posts" *ngIf="!(isLoading$ | async)">
+        <h1 class="no-posts--title">No posts yet</h1>
+        <p class="no-posts--desc">Create the firts post here <a routerLink="/pizza/create">Create post</a>!</p>
+    </div>
 </ng-container>
 
 
@@ -18,13 +22,13 @@
 
         <section class="card">
             <div class="img-container">
-                <img src={{pizza.image}} alt="">
+                <img src="/assets/pizzaImages/{{pizza.image}}" alt="">
             </div>
 
             <div class="pizza--info">
                 <h3 class="pizza--title">{{pizza.name}}</h3>
                 <div class="pizza--divider"></div>
-                <p class="pizza--desc">{{pizza.ingredients}}</p>
+                <p class="pizza--desc">{{pizza.info}}</p>
                 <a class="order--btn" [routerLink]="['/pizza/menu', pizza._id]">Order</a>
             </div>
         </section>

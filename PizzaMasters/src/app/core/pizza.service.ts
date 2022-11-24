@@ -23,8 +23,13 @@ export class PizzaService {
       .get<IPizza[]>(`${environment.apiUrl}/pizza/menu`);
   }
 
-  loadPizzaById(pizzaId: string): Observable<IPizza> {
-      return this.httpClient
-        .get<IPizza>(`${environment.apiUrl}/pizza/menu/${pizzaId}`);
+  loadPizzaById$(pizzaId: string): Observable<IPizza> {
+    return this.httpClient
+      .get<IPizza>(`${environment.apiUrl}/pizza/menu/${pizzaId}`);
+  }
+
+  orderPizza$(pizzaId, userId): Observable<void> {
+    return this.httpClient
+      .put<void>(`${environment.apiUrl}/pizza/order/${pizzaId}`, { pizzaId, userId });
   }
 }

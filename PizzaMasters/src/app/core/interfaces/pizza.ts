@@ -1,7 +1,7 @@
 
 export interface IPizza {
     image: string,
-    ingredients: string,
+    info: string,
     name: string,
     size: string,
     price: number,

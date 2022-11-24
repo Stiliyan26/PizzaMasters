@@ -5,10 +5,16 @@
 
     #details-card .info--title {
         font-size: 3rem;
+        margin-bottom: 15px;
+    }
+
+    #details-card .info--divider {
+        margin-bottom: 20px;
     }
 
     #details-card .info--desc {
         font-size: 2rem;
+        margin-bottom: 30px;
     }
 
     #details-card .info--size {
@@ -21,6 +27,7 @@
 
     #details-card .info--price {
         font-size: 2rem;
+        padding-bottom: 60px;
     }
 
     #details-card .order--btn {

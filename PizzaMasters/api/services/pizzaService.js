@@ -8,18 +8,33 @@ const createPizza = async (pizzaData) => {
 
 const getAllPizzas = async () => {
     const allPizzas = await Pizza.find({});
-    
+
     return allPizzas;
 }
 
 const getPizzaById = async (pizzaId) => {
     const pizza = await Pizza.findById(pizzaId).lean();
 
-    return  pizza;
+    return pizza;
 }
+
+const order = async (currentPizza, userId) => {
+    const existingPizza = await Pizza.findById(currentPizza._id);
+
+    if (existingPizza.ordered.includes(userId)) {
+        throw new Error('This user already ordered this pizza!');
+    }
+
+    existingPizza.ordered.push(userId);
+    existingPizza.ownerId = currentPizza.ownerId;
+
+    return await existingPizza.save();
+}
+
 
 module.exports = {
     createPizza,
     getAllPizzas,
-    getPizzaById
+    getPizzaById,
+    order
 }

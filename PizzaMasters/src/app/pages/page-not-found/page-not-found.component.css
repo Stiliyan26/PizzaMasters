@@ -45,6 +45,8 @@
     top: 60%;
     width: 75%;
     color: #386641;
+    text-shadow: 3px 3px black;
+    padding-top: 10px;
 }
 
 .mainbox a {

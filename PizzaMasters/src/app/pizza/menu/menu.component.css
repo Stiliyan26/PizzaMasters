@@ -37,6 +37,7 @@
 
 #menu .pizza--info .pizza--title {
     color: #3080a9;
+    text-transform: capitalize;
 }
 
 #menu .pizza--info .pizza--divider {
@@ -76,6 +77,33 @@
     color: #fff;
 }
 
+#no-posts {
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#no-posts .no-posts--title {
+    color: #386641;
+    font-size: 9rem;
+    text-shadow: 6px 6px black;
+}
+
+#no-posts .no-posts--desc {
+    text-align: center;
+    font-size: 2rem;
+    width: 75%;
+    color: #386641;
+    text-shadow: 3px 3px black;
+}
+
+#no-posts .no-posts--desc a {
+    text-decoration: none;
+    color: #95c2de;
+    text-align: center;
+}
+
 /* Loading */
 
 #menu--loading--container {
@@ -91,6 +119,7 @@
     font-size: 9rem;
     color: #386641;
     padding-right: 20px;
+    text-shadow: 6px 6px black;
 }
 
 #menu--loading--container .dot {

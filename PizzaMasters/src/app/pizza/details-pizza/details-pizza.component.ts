@@ -38,7 +38,7 @@ export class DetailsPizzaComponent implements OnInit {
 
             return this.refereshPizzaRequest$
               .pipe(
-                mergeMap(() => this.pizzaService.loadPizzaById(pizzaId))
+                mergeMap(() => this.pizzaService.loadPizzaById$(pizzaId))
               )
           })
         ),
@@ -53,6 +53,15 @@ export class DetailsPizzaComponent implements OnInit {
         
         this.canOrder = user && !this.pizza.ordered.includes(user?._id);
         this.isUserOwner = user && user?._id == pizza?.ownerId;
+      })
+  }
+
+  orderPizzaById(pizzaId: string, userId: string): void {    
+    this.pizzaService.orderPizza$(pizzaId, userId)
+      .subscribe({
+        next: () => {
+          this.refereshPizzaRequest$.next(undefined);
+        }
       })
   }
 }

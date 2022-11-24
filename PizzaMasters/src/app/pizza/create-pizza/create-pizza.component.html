@@ -35,22 +35,22 @@
             </div>
 
             <div class="input--info textarea--container">
-                <label class="label" for="">Ingredients</label>
+                <label class="label" for="">Info</label>
 
                 <div class="inp--container">
-                    <i [class.input--err]="ingredients.touched && ingredients.invalid" class="fa-solid fa-file-signature icon"></i>
-                    <textarea #ingredients="ngModel" class="inp textarea" type="text"
-                        placeholder="Write the required ingredients" name="ingredients" ngModel required
+                    <i [class.input--err]="info.touched && info.invalid" class="fa-solid fa-file-signature icon"></i>
+                    <textarea #info="ngModel" class="inp textarea" type="text"
+                        placeholder="Write the required info" name="info" ngModel required
                         minlength="10"></textarea>
                 </div>
             </div>
 
-            <div *ngIf="ingredients.touched && ingredients.invalid" class="error--textbox--container">
-                <p *ngIf="ingredients.errors['required']" class="error err--textbox">
-                    Ingredients info is required!
+            <div *ngIf="info.touched && info.invalid" class="error--textbox--container">
+                <p *ngIf="info.errors['required']" class="error err--textbox">
+                    Info info is required!
                 </p>
-                <p *ngIf="ingredients.errors['minlength']" class="error err--textbox">
-                    Ingredients info must be at least 10 characters!
+                <p *ngIf="info.errors['minlength']" class="error err--textbox">
+                    Info info must be at least 10 characters!
                 </p>
             </div>
 
