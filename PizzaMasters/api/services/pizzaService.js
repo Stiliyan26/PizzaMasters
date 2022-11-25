@@ -35,10 +35,24 @@ const deletePizzaById = async (pizzaId) => {
     await Pizza.findByIdAndDelete(pizzaId);
 }
 
+const updatePizza = async (pizzaId, pizzaData) => {
+    const existing = await Pizza.findById(pizzaId);
+
+    existing.image = pizzaData.image;
+    existing.name = pizzaData.name;
+    existing.info = pizzaData.info;
+    existing.size = pizzaData.size;
+    existing.price = pizzaData.price;
+    existing.ownerId = pizzaData.ownerId;
+
+    return await existing.save();
+}
+
 module.exports = {
     createPizza,
     getAllPizzas,
     getPizzaById,
     order,
-    deletePizzaById
+    deletePizzaById,
+    updatePizza
 }

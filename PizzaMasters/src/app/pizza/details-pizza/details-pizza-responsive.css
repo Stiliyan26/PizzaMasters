@@ -32,6 +32,12 @@
 
     #details-card .order--btn {
         font-size: 2rem;
+        font-size: 2rem;
+    }
+
+    #details-card .have-ordered--btn {
+        font-size: 2rem;
+        padding: 15px;
     }
 
     #details-card .edit--btn,

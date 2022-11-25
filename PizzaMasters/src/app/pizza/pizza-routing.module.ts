@@ -17,7 +17,7 @@ const routes: Routes = [
         component: CreatePizzaComponent
     },
     {
-        path: 'edit',
+        path: 'edit/:pizzaId',
         canActivate: [AuthGuard],
         component: EditPizzaComponent
     },

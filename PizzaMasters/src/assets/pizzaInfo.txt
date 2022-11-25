@@ -9,12 +9,12 @@
 }
 
 {
-    image: Margarita
+    image: margarita.jpg
+
+    name: Margarita
 
     info: Pizza Margherita (pronounced mahr-geh-ree-tah) is basically a Neapolitan pizza, typically
      made with tomatoes, mozzarella cheese, garlic, fresh basil, and extra-virgin olive oil.
-
-    name: Margarita
 }
 
 {

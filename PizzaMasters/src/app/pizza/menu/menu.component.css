@@ -75,6 +75,7 @@
 #menu .pizza--info .order--btn:hover {
     background-color: #43810e;
     color: #fff;
+    transform: scale(1.02);
 }
 
 #no-posts {

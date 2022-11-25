@@ -25,13 +25,12 @@ export class CreatePizzaComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-
   }
 
-  handleCreatePizza() {
+  handleCreatePizza(): void {
     this.currentUser$
       .pipe(
-        tap(curtUser => this.currentUser = curtUser),
+        tap(currenttUser => this.currentUser = currenttUser),
         mergeMap(() => this.pizzaService.createNewPizza$(this.createPizzaForm.value, this.currentUser._id))
       )
       .subscribe({
@@ -44,4 +43,8 @@ export class CreatePizzaComponent implements OnInit {
         }
       });
   };
+
+  handleCancel(): void {
+    this.route.navigate(['/pizza/menu']);
+  }
 }

@@ -11,5 +11,5 @@ export interface IDialogState {
 
 export interface IPizzaState {
     menu: IMenuState,
-    dialog: IDialogState
+    dialog: IDialogState,
 }

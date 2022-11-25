@@ -1,7 +1,7 @@
-<div class="edit--form--container">
-    <form id="edit" action="">
+<div class="edit--form--container" *ngIf="!!pizza">
+    <form #editPizzaForm="ngForm" (ngSubmit)="handleEditPizza()" id="edit" action="">
         <div class="title--container">
-            <img class="title--image" src="../../../assets/images/pizzaform2.png" alt="">
+            <img class="title--image" src="/assets/images/pizzaform2.png" alt="">
             <h2 class="title">Edit Pizza</h2>
         </div>
 
@@ -10,52 +10,56 @@
                 <label class="label" for="">Image</label>
 
                 <div class="inp--container">
-                    <i class="fa-regular fa-image icon"></i>
-                    <input class="inp" type="text" placeholder="Add an image" value="/assets/img/picrute.png">
+                    <i [class.input--err]="image.touched && image.invalid" class="fa-regular fa-image icon"></i>
+                    <input #image="ngModel" class="inp" type="text" placeholder="Add an image" name="image"
+                        ngModel={{pizza.image}} required>
                 </div>
 
-                <!-- <p class="error">Image is required!</p> -->
+                <ng-container *ngIf="image.touched && image.invalid">
+                    <p *ngIf="image.errors['required']" class="error">Image is required!</p>
+                </ng-container>
             </div>
 
             <div class="input--info">
                 <label class="label" for="">Name</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-pizza-slice icon"></i>
-                    <input class="inp" type="text" placeholder="Give your pizza a name" value="Peperoni">
+                    <i [class.input--err]="name.touched && name.invalid" class="fa-solid fa-pizza-slice icon"></i>
+                    <input #name="ngModel" class="inp" type="text" placeholder="Give your pizza a name" name="name"
+                        ngModel={{pizza.name}} required minlength="5">
                 </div>
 
-                <!-- <p class="error">Name is required!</p>
-                <p class="error">Name must be at least 5 characters!</p> -->
+                <ng-container *ngIf="name.touched && name.invalid">
+                    <p *ngIf="name.errors['required']" class="error">Name is required!</p>
+                    <p *ngIf="name.errors['minlength']" class="error">Name must be at least 5 characters!</p>
+                </ng-container>
             </div>
 
             <div class="input--info textarea--container">
-                <label class="label" for="">info</label>
+                <label class="label" for="">Info</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-file-signature icon"></i>
-                    <textarea class="inp textarea" type="text" placeholder="Write the required info">
-                        Pepperoni is essentially an American version of salami, something close to what
-                Italians might call salame
-                piccante, a generic term that means “spicy salami.” It's made from beef and cured pork mixed together
-                and
-                then seasoned with a blend that usually includes paprika, garlic, black pepper, crushed red pepper,
-                cayenne
-                    </textarea>
+                    <i [class.input--err]="info.touched && info.invalid" class="fa-solid fa-file-signature icon"></i>
+                    <textarea #info="ngModel" class="inp textarea" type="text" placeholder="Write the required info"
+                        name="info" ngModel={{pizza.info}} required minlength="10"></textarea>
                 </div>
             </div>
 
-            <!-- <div class="error--textbox--container">
-                <p class="error err--textbox">info info is required!</p>
-                <p class="error err--textbox">info info must be at least 10 characters!</p>
-            </div> -->
+            <div *ngIf="info.touched && info.invalid" class="error--textbox--container">
+                <p *ngIf="info.errors['required']" class="error err--textbox">
+                    Info info is required!
+                </p>
+                <p *ngIf="info.errors['minlength']" class="error err--textbox">
+                    Info info must be at least 10 characters!
+                </p>
+            </div>
 
             <div class="input--info">
                 <label class="label" for="">Size</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-pizza-slice icon"></i>
-                    <select class="inp" name="" id="">
+                    <i [class.input--err]="size.touched && size.invalid" class="fa-solid fa-pizza-slice icon"></i>
+                    <select #size="ngModel" class="inp" name="size" ngModel={{pizza.size}} required>
                         <option value="" disabled selected hidden>Please Choose...</option>
                         <option value="Average">Average</option>
                         <option value="Large">Large</option>
@@ -63,8 +67,11 @@
                     </select>
                 </div>
 
-                <p class="error">Size is required!</p>
-                <!-- <p class="error">Price must be positve number!</p> -->
+                <ng-container *ngIf="size.touched && size.invalid">
+                    <p class="error">
+                        Size is required!
+                    </p>
+                </ng-container>
             </div>
 
 
@@ -72,15 +79,25 @@
                 <label class="label" for="">Price</label>
 
                 <div class="inp--container">
-                    <i class="fa-solid fa-dollar-sign icon"></i>
-                    <input class="inp" type="text" placeholder="Add price" value="20">
+                    <i [class.input--err]="price.touched && price.invalid" class="fa-solid fa-dollar-sign icon"></i>
+                    <input #price="ngModel" class="inp" type="number" placeholder="Add price" name="price"
+                        ngModel={{pizza.price}} required priceValidator>
                 </div>
 
-                <!-- <p class="error">Price is required!</p>
-                <p class="error">Price must be positve number!</p> -->
+                <ng-container *ngIf="price.touched && price.invalid">
+                    <p *ngIf="price.errors['required']" class="error">
+                        Price is required!
+                    </p>
+                    <p *ngIf="!price.errors['required'] && price.errors['price']" class="error">
+                        Price must be positve number!
+                    </p>
+                </ng-container>
             </div>
 
-            <button class="edit--btn">Save changes</button>
+            <div class="btns">
+                <button class="edit--btn" [disabled]="editPizzaForm.invalid">Save</button>
+                <button class="cancel--btn" (click)="handleCancel()">Cancel</button>
+            </div>
         </div>
     </form>
 </div>

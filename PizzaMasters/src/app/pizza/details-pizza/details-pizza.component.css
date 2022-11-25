@@ -84,20 +84,21 @@
 #details-card .order--btn {
     position: absolute;
     bottom: 20px;
-    padding: 10px;
-    background-color: #609e29;
+    padding: 12px;
+    background-color: #568b29;
     color: #f2e8cf;
     width: 80%;
     text-transform: uppercase;
     font-size: 1.3rem;
     cursor: pointer;
     border-radius: 30px;
+    font-weight: bold;
 }
 
 #details-card .have-ordered--btn {
     position: absolute;
     bottom: 20px;
-    padding: 10px;
+    padding: 12px;
     background-color: #495057;
     color: #dee2e6;
     width: 80%;
@@ -105,12 +106,13 @@
     font-size: 1.3rem;
     cursor: pointer;
     border-radius: 30px;
+    font-weight: bold;
 }
 
-#details-card .order--btn:hover,
-#details-card .edit--btn:hover {
+#details-card .order--btn:hover {
     background-color: #43810e;
     color: #fff;
+    transform: scale(1.02);
 }
 
 #details-card .owenr--btn {
@@ -133,6 +135,7 @@
     color: #f2e8cf;
     border: 1px solid black;
     cursor: pointer;
+    font-weight: bold;  
 }
 
 #details-card .edit--btn {
@@ -141,9 +144,17 @@
 
 #details-card .delete--btn {
     background-color: #bc4749;
+
+}
+
+#details-card .edit--btn:hover{
+    background-color: #43810e;
+    color: #fff;
+    transform: scale(1.02);
 }
 
 #details-card .delete--btn:hover {
     color: #fff;
     background-color: #e02225;
+    transform: scale(1.02);
 }

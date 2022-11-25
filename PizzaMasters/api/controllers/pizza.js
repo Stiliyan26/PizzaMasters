@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { createPizza, getAllPizzas, getPizzaById, order , deletePizzaById} = require('../services/pizzaService.js');
+const { createPizza, getAllPizzas, getPizzaById, order, deletePizzaById, updatePizza } = require('../services/pizzaService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/create', async (req, res) => {
@@ -28,7 +28,7 @@ router.post('/create', async (req, res) => {
 router.get('/menu', async (req, res) => {
     try {
         const allPizzas = await getAllPizzas();
-        
+
         res.json(allPizzas);
 
     } catch (err) {
@@ -78,12 +78,45 @@ router.put('/order/:pizzaId', async (req, res) => {
     }
 });
 
-router.delete('/delete/:pizzaId', async (req, res) =>{
+router.delete('/delete/:pizzaId', async (req, res) => {
     try {
         const pizzaId = req.params.pizzaId;
 
         await deletePizzaById(pizzaId);
         res.json('Animal deleted!');
+
+    } catch (err) {
+        const errors = mapErrors(err);
+        console.log(err);
+
+        res.status(409)
+            .send(errors);
+    }
+})
+
+router.put('/edit/:pizzaId', async (req, res) => {
+    try {
+        const pizzaId = req.body.pizzaId;
+        const userId = req.body.userId;
+        const newFormPizzaData = req.body.pizzaData;
+
+        const currentPizza = await getPizzaById(pizzaId);
+
+        const pizzaData = {
+            image: newFormPizzaData.image,
+            info: newFormPizzaData.info,
+            name: newFormPizzaData.name,
+            size: newFormPizzaData.size,
+            price: newFormPizzaData.price,
+            ownerId: currentPizza.ownerId,
+        }
+
+        if (userId != currentPizza.ownerId) {
+            throw new Error('This user has no premision to edit this post!');
+        }
+
+        const updatedPizza = await updatePizza(pizzaId, pizzaData);
+        res.json(updatedPizza);
 
     } catch (err) {
         const errors = mapErrors(err);

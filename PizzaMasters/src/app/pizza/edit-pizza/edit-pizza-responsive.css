@@ -38,11 +38,18 @@
         padding-left: 20px;
     }
 
+    #edit .btns {
+        width: 500px;
+    }
+
     #edit .edit--btn {
-        width: 600px;
         padding: 20px;
         font-size: 1.6rem;
-        margin-top: 30px;
+    }
+
+    #edit .cancel--btn {
+        padding: 20px;
+        font-size: 1.6rem;
     }
 
     #edit .redirect {
@@ -69,7 +76,7 @@
         padding: 10px;
     }
 
-    #edit .title--container .title--image { 
+    #edit .title--container .title--image {
         width: 160px;
     }
 
@@ -86,4 +93,4 @@
     #edit .error--textbox--container {
         padding-top: 15px;
     }
-}   
+}

@@ -87,17 +87,36 @@
     padding-top: 15px;
 }
 
+#create .btns {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 350px;
+    gap: 20px;
+}
+
 #create .create--btn {
+    flex-basis: 50%;
     background-color: #31572c;
-    width: 400px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    color: #f2e8cf;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#create .cancel--btn {
+    background-color: #bc4749;
+    flex-basis: 50%;
     font-size: 1.2rem;
     text-transform: uppercase;
     border-radius: 30px;
     padding: 10px;
-    margin-top: 20px;
     color: #f2e8cf;
     font-weight: bold;
-    margin-bottom: 30px;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -105,6 +124,13 @@
 #create .create--btn:hover {
     background-color: #1b682b;
     color: #fff;
+    transform: scale(1.05);
+}
+
+#create .cancel--btn:hover {
+    background-color: #da3134;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 #create .redirect {

@@ -1,7 +1,7 @@
 <div class="create--form--container">
     <form #createPizzaForm="ngForm" (ngSubmit)="handleCreatePizza()" id="create" action="">
         <div class="title--container">
-            <img class="title--image" src="../../../assets/images/pizzaform2.png" alt="">
+            <img class="title--image" src="/assets/images/pizzaform2.png" alt="">
             <h2 class="title">Create Pizza</h2>
         </div>
 
@@ -11,7 +11,8 @@
 
                 <div class="inp--container">
                     <i [class.input--err]="image.touched && image.invalid" class="fa-regular fa-image icon"></i>
-                    <input #image="ngModel" class="inp" type="text" placeholder="Add an image" name="image" ngModel required>
+                    <input #image="ngModel" class="inp" type="text" placeholder="Add an image" name="image" ngModel
+                        required>
                 </div>
 
                 <ng-container *ngIf="image.touched && image.invalid">
@@ -24,8 +25,8 @@
 
                 <div class="inp--container">
                     <i [class.input--err]="name.touched && name.invalid" class="fa-solid fa-pizza-slice icon"></i>
-                    <input #name="ngModel" class="inp" type="text" placeholder="Give your pizza a name" name="name" ngModel required
-                        minlength="5">
+                    <input #name="ngModel" class="inp" type="text" placeholder="Give your pizza a name" name="name"
+                        ngModel required minlength="5">
                 </div>
 
                 <ng-container *ngIf="name.touched && name.invalid">
@@ -39,9 +40,8 @@
 
                 <div class="inp--container">
                     <i [class.input--err]="info.touched && info.invalid" class="fa-solid fa-file-signature icon"></i>
-                    <textarea #info="ngModel" class="inp textarea" type="text"
-                        placeholder="Write the required info" name="info" ngModel required
-                        minlength="10"></textarea>
+                    <textarea #info="ngModel" class="inp textarea" type="text" placeholder="Write the required info"
+                        name="info" ngModel required minlength="10"></textarea>
                 </div>
             </div>
 
@@ -94,7 +94,10 @@
                 </ng-container>
             </div>
 
-            <button class="create--btn" [disabled]="createPizzaForm.invalid">Create</button>
+            <div class="btns">
+                <button class="create--btn" [disabled]="createPizzaForm.invalid">Create</button>
+                <button class="cancel--btn" (click)="handleCancel()">Cancel</button>
+            </div>
         </div>
     </form>
 </div>

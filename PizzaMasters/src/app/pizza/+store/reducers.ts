@@ -55,6 +55,7 @@ export const dialogReducer = createReducer<IDialogState>(initDialogState,
     })
 )
 
+
 export interface IPizzaModuleState extends IRootState {
     pizza: IPizzaState;
 }

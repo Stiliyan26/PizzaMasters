@@ -31,7 +31,7 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
     FormsModule,
     StoreModule.forFeature<IPizzaState>('pizza', {
       menu: menuReducer,
-      dialog: dialogReducer
+      dialog: dialogReducer,
     })
   ]
 })

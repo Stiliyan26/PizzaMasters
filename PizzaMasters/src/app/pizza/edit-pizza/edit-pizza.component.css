@@ -78,7 +78,6 @@
 #edit .icon {
     width: 15%;
     height: 100%;
-    /* background-color: #bc4749; */
     background-color: #86662a;
     font-size: 18px;
     border-top-left-radius: 20px;
@@ -87,17 +86,36 @@
     padding-top: 15px;
 }
 
+#edit .btns {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 350px;
+    gap: 20px;
+}
+
 #edit .edit--btn {
+    flex-basis: 50%;
     background-color: #31572c;
-    width: 400px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    border-radius: 30px;
+    color: #f2e8cf;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#edit .cancel--btn {
+    background-color: #bc4749;
+    flex-basis: 50%;
     font-size: 1.2rem;
     text-transform: uppercase;
     border-radius: 30px;
     padding: 10px;
-    margin-top: 20px;
     color: #f2e8cf;
     font-weight: bold;
-    margin-bottom: 30px;
     transition: 0.3s;
     cursor: pointer;
 }
@@ -105,6 +123,13 @@
 #edit .edit--btn:hover {
     background-color: #1b682b;
     color: #fff;
+    transform: scale(1.05);
+}
+
+#edit .cancel--btn:hover {
+    background-color: #da3134;
+    color: #fff;
+    transform: scale(1.05);
 }
 
 #edit .redirect {
@@ -154,3 +179,8 @@
     padding-bottom: 20px;
     width: 400px;
 }
+
+#edit .input--err {
+    background-color: #bc4749;
+}
+

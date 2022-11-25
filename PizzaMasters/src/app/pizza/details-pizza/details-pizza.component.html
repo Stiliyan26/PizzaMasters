@@ -30,7 +30,7 @@
                 </ng-container>
 
                 <div *ngIf="isUserOwner" class="owenr--btn">
-                    <a class="edit--btn" routerLink="/pizza/edit">Edit</a>
+                    <a class="edit--btn" [routerLink]="['/pizza/edit', pizza._id]">Edit</a>
                     <button (click)="deletePizzaHandler()" class="delete--btn">Delete</button>
                 </div>
 
