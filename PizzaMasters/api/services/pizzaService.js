@@ -48,11 +48,18 @@ const updatePizza = async (pizzaId, pizzaData) => {
     return await existing.save();
 }
 
+const getPizzasByOwner = async (userId) => {
+    const pizzas = await Pizza.find({ ownerId: userId });
+
+    return pizzas;
+}
+
 module.exports = {
     createPizza,
     getAllPizzas,
     getPizzaById,
     order,
     deletePizzaById,
-    updatePizza
+    updatePizza,
+    getPizzasByOwner
 }

@@ -42,4 +42,9 @@ export class PizzaService {
     return this.httpClient
       .put<void>(`${environment.apiUrl}/pizza/edit/${pizzaData._id}`, { pizzaData, pizzaId, userId });
   }
+
+  getAllPizzasByOwner$(ownerId: string): Observable<IPizza[]> {
+    return this.httpClient
+      .put<IPizza[]>(`${environment.apiUrl}/pizza/profile`, { ownerId });
+  }
 }

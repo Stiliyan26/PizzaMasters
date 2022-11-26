@@ -8,6 +8,17 @@
         border-bottom: 6px dotted #bc4749;
     }
 
+    #no-posts{
+        padding-top: 250px;
+    }
+    #no-posts .no-posts--title {
+        font-size: 14rem;
+    }
+
+    #no-posts .no-posts--desc {
+        font-size: 3rem;
+    }
+
     #myposts .pizza--info .pizza--title {
         font-size: 2.2rem;
     }

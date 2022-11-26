@@ -21,6 +21,7 @@
 .welcome .btn:hover {
     background-color: #de2225;
     color: #fff;
+    transform: scale(1.07);
 }
 
 .welcome .btn a {
