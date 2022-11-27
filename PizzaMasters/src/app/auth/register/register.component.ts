@@ -82,7 +82,7 @@ export class RegisterComponent implements OnInit {
         error: (err) => {
           this.emailIsTaken = err.error.map(err => err.msg == 'Email is already taken!');
           this.emailIsTakenErrorMsg = err.error.filter(err => err.msg == 'Email is already taken!')[0].msg;
-          // this.store.dispatch(registerProcessError({ errorMessage: this.emailIsTakenErrorMsg }));
+          this.store.dispatch(registerProcessError({ errorMessage: this.emailIsTakenErrorMsg }));
         }
       });
   }

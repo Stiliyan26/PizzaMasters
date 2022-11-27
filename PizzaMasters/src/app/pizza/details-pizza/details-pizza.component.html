@@ -1,4 +1,4 @@
-<app-delete-dialog *ngIf="(isDialogViewed$ | async)" [pizzaId]="pizza._id"></app-delete-dialog>
+<app-delete-dialog *ngIf="(isDialogViewed$ | async)" [pizzaId]="pizza._id" [pizza]="pizza"></app-delete-dialog>
 
 <div class="details--container">
     <section id="details-card" *ngIf="!!pizza">
