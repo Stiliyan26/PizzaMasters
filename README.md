@@ -12,7 +12,7 @@ Open http://localhost:4200 to view it in your browser.
 The page will reload when you make changes.
 You may also see any lint errors in the console.
 
-Information about the project:
+##Information about the project:
 
 ## npm start - starts the api and Angular CLI in one terminal
 
