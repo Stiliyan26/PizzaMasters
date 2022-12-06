@@ -15,7 +15,6 @@ import { PizzaService } from 'src/app/core/pizza.service';
 export class EditPizzaComponent implements OnInit {
   @ViewChild('editPizzaForm') editPizzaForm: NgForm;
 
-  hey: string = '200';
   pizzaId: string;
   userId: string;
 
