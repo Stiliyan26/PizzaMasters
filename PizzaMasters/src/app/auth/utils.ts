@@ -2,7 +2,7 @@ import { AbstractControl, ValidationErrors, FormGroup } from "@angular/forms";
 
 export function emailValidator(control: AbstractControl): ValidationErrors | null {
     const value = control.value;
-    const emailPattern = /.{4,}@abv\.(bg|com)/;
+    const emailPattern = /.{4,}@(abv|gmail)\.(bg|com)/;
 
     if (!value) {
         return null
