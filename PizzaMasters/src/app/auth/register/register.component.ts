@@ -7,7 +7,6 @@ import { IAuthModuleState } from '../+store/reducers';
 import { initializeRegisterState, registerProcessError, startRegisterProcess } from '../+store/actions';
 import { registerIsPendingSelector } from '../+store/selectors';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
 import { emailValidator, passwordMatch } from '../utils';
 import { IUser } from 'src/app/core/interfaces/user';
 import { StorageService } from 'src/app/core/storage.service';

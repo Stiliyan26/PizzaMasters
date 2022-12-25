@@ -33,6 +33,7 @@ async function loginUser(email, password) {
         username: existing.username,
         email,
         password,
+        orders: existing.orders,
         _id: existing._id
     });
 

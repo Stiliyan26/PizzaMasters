@@ -48,15 +48,4 @@ router.get('/profile', async (req, res) => {
     }
 });
 
-
-
-// const data = {
-//     username: req.body.username,
-//     email: req.body.email,
-//     password: req.body.password,
-//     rePassword: req.body.rePassword
-// }
-
-// const User = require();
-
 module.exports = router;

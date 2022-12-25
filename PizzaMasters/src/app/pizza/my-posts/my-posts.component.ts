@@ -41,13 +41,12 @@ export class MyPostsComponent implements OnInit {
     this.pizzaService.getAllPizzasByOwner$(this.currentUserId)
       .subscribe({
         next: (allPizzasData) => {
-
           setTimeout(() => {
             this.store.dispatch(endLoadingProcess());
             this.store.dispatch(menuDataState({ pizzas: allPizzasData }));
 
             this.allPizzasByOwner = allPizzasData;
-          }, 1500);
+          }, 800);
         },
         error: (err) => {
           console.log('Error:', err.error);

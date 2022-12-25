@@ -30,7 +30,7 @@ export class CreatePizzaComponent implements OnInit {
   handleCreatePizza(): void {
     this.currentUser$
       .pipe(
-        tap(currenttUser => this.currentUser = currenttUser),
+        tap(currentUser => this.currentUser = currentUser),
         mergeMap(() => this.pizzaService.createNewPizza$(this.createPizzaForm.value, this.currentUser._id))
       )
       .subscribe({

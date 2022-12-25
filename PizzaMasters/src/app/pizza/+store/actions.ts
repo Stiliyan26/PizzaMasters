@@ -12,3 +12,10 @@ const dialogDomain = ['DeleteDialogComponent'];
 export const startShowDialogProcess = createAction(`${dialogDomain} Start dialog process`);
 
 export const endShowDialogProcess = createAction(`${dialogDomain} End dialog process`);
+
+const cartDomain = ['CartComponent'];
+export const startCartLoadingProcess = createAction(`${cartDomain} Start cart loading`);
+
+export const endCartLoadingProcess = createAction(`${cartDomain} End cart loading`);
+
+export const cartDataState = createAction(`${cartDomain} Cart state set`, props<{pizzas: IPizza[]}>());

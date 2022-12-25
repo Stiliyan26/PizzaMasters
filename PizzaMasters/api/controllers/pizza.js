@@ -1,6 +1,7 @@
 const router = require('express').Router();
 
-const { createPizza, getAllPizzas, getPizzaById, order, deletePizzaById, updatePizza, getPizzasByOwner } = require('../services/pizzaService.js');
+const { createPizza, getAllPizzas, getPizzaById, order,
+     deletePizzaById, updatePizza, getPizzasByOwner, getAllOrderedPizzas } = require('../services/pizzaService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/create', async (req, res) => {
@@ -134,6 +135,21 @@ router.put('/profile', async (req, res) => {
         const myPizzas = await getPizzasByOwner(userId);
 
         res.json(myPizzas);
+    } catch (err) {
+        const errors = mapErrors(err);
+        console.log(err);
+
+        res.status(409)
+            .send(errors);
+    }
+})
+
+router.put('/cart', async(req, res) => {
+    try {
+        const userId = req.body.user;
+
+        const orderedPizzas = await getAllOrderedPizzas(userId);
+        res.json(orderedPizzas)
     } catch (err) {
         const errors = mapErrors(err);
         console.log(err);

@@ -19,6 +19,11 @@
                 <li class="list-item">
                     <a routerLink="/pizza/myposts">{{(currentUser$ | async)?.username}}'s Posts</a>
                 </li>
+
+                <li class="list-item">
+                    <a routerLink="/pizza/cart">Cart <i class="fa-solid fa-cart-shopping"></i></a>
+                </li>
+
                 <li class="list-item">
                     <a (click)="logoutHandler()" href="javascript:void(0)">Logout</a>
                 </li>

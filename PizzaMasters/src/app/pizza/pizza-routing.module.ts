@@ -1,5 +1,6 @@
 import { RouterModule, Routes } from "@angular/router";
 import { AuthGuard } from "../core/guard/auth.guard";
+import { CartComponent } from "./cart/cart.component";
 import { CreatePizzaComponent } from "./create-pizza/create-pizza.component";
 import { DetailsPizzaComponent } from "./details-pizza/details-pizza.component";
 import { EditPizzaComponent } from "./edit-pizza/edit-pizza.component";
@@ -29,6 +30,11 @@ const routes: Routes = [
         path: 'myposts',
         canActivate: [AuthGuard],
         component: MyPostsComponent
+    },
+    {
+        path: 'cart',
+        canActivate: [AuthGuard],
+        component: CartComponent
     }
 ]
 

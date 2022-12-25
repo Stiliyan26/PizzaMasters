@@ -9,7 +9,13 @@ export interface IDialogState {
     viewDialog: boolean,
 }
 
+export interface ICartState {
+    isLoading: boolean,
+    pizzas: IPizza[]
+}
+
 export interface IPizzaState {
     menu: IMenuState,
     dialog: IDialogState,
+    cart: ICartState
 }

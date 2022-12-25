@@ -1,7 +1,8 @@
+import { state } from "@angular/animations";
 import { createReducer, on } from "@ngrx/store";
 import { IRootState } from "src/app/+store";
-import { IDialogState, IMenuState, IPizzaState } from ".";
-import { endLoadingProcess, endShowDialogProcess, menuDataState, startLoadingProcess, startShowDialogProcess } from "./actions";
+import { ICartState, IDialogState, IMenuState, IPizzaState } from ".";
+import { cartDataState, endLoadingProcess, endShowDialogProcess, menuDataState, startCartLoadingProcess, startLoadingProcess, startShowDialogProcess } from "./actions";
 
 
 const initialPizzaState = {
@@ -55,6 +56,36 @@ export const dialogReducer = createReducer<IDialogState>(initDialogState,
     })
 )
 
+const initialCartState = {
+    isLoading: false,
+    pizzas: []
+}
+
+export const cartReducer = createReducer<ICartState>(initialCartState,
+    on(startCartLoadingProcess, (state => {
+        return {
+            ...state,
+            isLoading: true,
+            pizzas: []
+        }
+    })),
+
+    on(endLoadingProcess, (state => {
+        return {
+            ...state,
+            isLoading: false,
+        }
+    })),
+
+    on(cartDataState, (state, action) => {
+        return {
+            ...state,
+            isLoading: false,
+            pizzas: action.pizzas
+        }
+    })
+
+)
 
 export interface IPizzaModuleState extends IRootState {
     pizza: IPizzaState;

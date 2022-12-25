@@ -1,0 +1,38 @@
+<section *ngIf="(isLoading$ | async)" id="cart--loading--container">
+    <h1 class="loading">Loading</h1>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</section>
+
+<ng-container *ngIf="allPizzasInCart?.length == 0">
+    <div id="no-posts" *ngIf="!(isLoading$ | async)">
+        <h1 class="no-posts--title">No orders yet</h1>
+        <p class="no-posts--desc">Create your firts post here <a routerLink="/pizza/create">Create post</a>!</p>
+    </div>
+</ng-container>
+
+<div class="cart-container" *ngIf="!(isLoading$ | async) && allPizzasInCart?.length != 0">
+    <h1 class="cart--title">Total price of {{totalPrice}}$</h1>
+
+    <section id="cart" class="grid">
+       
+        <ng-container *ngFor="let pizza of allPizzasInCart">
+
+            <section class="card">
+                <div class="img-container">
+                    <img src="/assets/pizzaImages/{{pizza.image}}" alt="">
+                </div>
+    
+                <div class="pizza--info">
+                    <h3 class="pizza--title">{{pizza.name}}</h3>
+                    <div class="pizza--divider"></div>
+                    <p class="pizza--desc">{{pizza.info}}</p>
+                    <a class="ordered--btn" [routerLink]="['/pizza/menu', pizza._id]">Ordered</a>
+                </div>
+            </section>
+
+        </ng-container>
+    </section>
+</div>
