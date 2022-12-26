@@ -36,6 +36,7 @@ const order = async (currentPizza, userId) => {
     existingPizza.ownerId = currentPizza.ownerId;
 
     await currentUser.save();
+
     return await existingPizza.save();
 }
 
@@ -65,8 +66,32 @@ const getPizzasByOwner = async (userId) => {
 const getAllOrderedPizzas = async (userId) => {
     const user = await User.findById(userId).populate('orders');
     const orderedPizzas = user.orders;
-    
+
     return orderedPizzas;
+}
+
+const deleteOrder = async (pizzaData, userId) => {
+    const pizzaId = pizzaData._id;
+
+    const currentPizza = await Pizza.findById(pizzaId);
+    const user = await User.findById(userId);
+ 
+    if (!currentPizza.ordered.includes(userId) && !user.orders.includes(pizzaId)) {
+        throw new Error("This pizza is not ordered!")
+    }
+
+    const indexOfUser = currentPizza.ordered.indexOf(userId)
+    currentPizza.ordered.splice(indexOfUser, 1);
+
+    const indexOfPizza = user.orders.indexOf(pizzaId);
+    user.orders.splice(indexOfPizza, 1)
+
+    currentPizza.ownerId = pizzaData.ownerId;
+    
+    await currentPizza.save()
+    await user.save();
+
+    return currentPizza;
 }
 
 module.exports = {
@@ -77,5 +102,6 @@ module.exports = {
     deletePizzaById,
     updatePizza,
     getPizzasByOwner,
-    getAllOrderedPizzas
+    getAllOrderedPizzas,
+    deleteOrder
 }

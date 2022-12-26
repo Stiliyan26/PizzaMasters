@@ -10,6 +10,7 @@ export class StorageService {
     username: '',
     email: '',
     password: '',
+    orders: [],
     _id: '',
     __v: 0
   }

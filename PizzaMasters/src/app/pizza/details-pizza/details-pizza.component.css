@@ -109,6 +109,12 @@
     font-weight: bold;
 }
 
+#details-card .have-ordered--btn:hover {
+    background-color: #40474e;
+    color: #fff;
+    transform: scale(1.05);
+}
+
 #details-card .order--btn:hover {
     background-color: #43810e;
     color: #fff;
@@ -158,3 +164,4 @@
     background-color: #e02225;
     transform: scale(1.02);
 }
+

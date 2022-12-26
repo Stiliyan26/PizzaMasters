@@ -47,8 +47,6 @@ export class LoginComponent implements OnInit {
     this.authService.login$(formData)
       .subscribe({
         next: (user: IUser) => {
-          console.log(user)
-
           this.userDoesnNotExist = false;
           this.authService.handleLogin(user);
           this.localStorage.setUserLocalStorage(user);

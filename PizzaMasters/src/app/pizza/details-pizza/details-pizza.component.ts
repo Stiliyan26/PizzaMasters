@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { BehaviorSubject, combineLatest, mergeMap, tap } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, mergeMap, tap } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IPizza } from 'src/app/core/interfaces/pizza';
 import { IUser } from 'src/app/core/interfaces/user';
@@ -42,7 +42,7 @@ export class DetailsPizzaComponent implements OnInit {
 
             return this.refereshPizzaRequest$
               .pipe(
-                mergeMap(() => this.pizzaService.loadPizzaById$(pizzaId))
+                mergeMap(() => this.pizzaService.loadPizzaById$(pizzaId)),
               )
           })
         ),
@@ -54,13 +54,12 @@ export class DetailsPizzaComponent implements OnInit {
     ])
       .subscribe(([pizza, user]) => {
         this.pizza = pizza;
-        
         this.canOrder = user && !this.pizza.ordered.includes(user?._id);
         this.isUserOwner = user && user?._id == pizza?.ownerId;
       })
   }
 
-  orderPizzaById(pizzaId: string, userId: string): void {    
+  orderPizzaById(pizzaId: string, userId: string): void {
     this.pizzaService.orderPizza$(pizzaId, userId)
       .subscribe({
         next: () => {
@@ -68,12 +67,24 @@ export class DetailsPizzaComponent implements OnInit {
         },
         error: (err) => {
           console.log(err.error);
-        } 
+        }
       })
   }
 
   deletePizzaHandler() {
     this.store.dispatch(startShowDialogProcess());
+  }
+
+  deleteOrderHandler(pizza: IPizza, userId: string): void {
+    this.pizzaService.deleteOrder$(pizza, userId)
+      .subscribe({
+        next: () => {
+          this.refereshPizzaRequest$.next(undefined);
+        },
+        error: (err) => {
+          console.log(err.error);
+        }
+      })
   }
 }
 

@@ -26,7 +26,7 @@
                 </ng-container>
 
                 <ng-container *ngIf="!canOrder && !isUserOwner">
-                    <button class="have-ordered--btn" disabled>You have ordered</button>
+                    <button (click)="deleteOrderHandler(pizza, currentUser._id)" class="have-ordered--btn">Delete order</button>
                 </ng-container>
 
                 <div *ngIf="isUserOwner" class="owenr--btn">

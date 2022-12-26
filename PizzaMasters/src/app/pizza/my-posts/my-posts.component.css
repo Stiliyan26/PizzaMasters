@@ -10,9 +10,10 @@
     color: #b5bb73;
     font-size: 3rem;
     font-family: 'Russo One';
-    padding-top: 50px;
+    padding-top: 20px;
     width: 300px;
     text-align: center;
+    text-shadow: 6px 6px black;
 }
 
 #myposts.grid {
@@ -131,6 +132,7 @@
     width: 800px;
     margin: 0 auto;
     padding-top: 200px;
+    text-shadow: 6px 6px black;
 }
 
 #myposts--loading--container .loading {

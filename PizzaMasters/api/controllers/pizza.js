@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const { createPizza, getAllPizzas, getPizzaById, order,
-     deletePizzaById, updatePizza, getPizzasByOwner, getAllOrderedPizzas } = require('../services/pizzaService.js');
+const { createPizza, getAllPizzas, getPizzaById, order, deletePizzaById,
+    updatePizza, getPizzasByOwner, getAllOrderedPizzas, deleteOrder } = require('../services/pizzaService.js');
 const mapErrors = require('../utils/mapErrors');
 
 router.post('/create', async (req, res) => {
@@ -131,7 +131,7 @@ router.put('/edit/:pizzaId', async (req, res) => {
 router.put('/profile', async (req, res) => {
     try {
         const userId = req.body.ownerId;
-        
+
         const myPizzas = await getPizzasByOwner(userId);
 
         res.json(myPizzas);
@@ -144,12 +144,29 @@ router.put('/profile', async (req, res) => {
     }
 })
 
-router.put('/cart', async(req, res) => {
+router.put('/cart', async (req, res) => {
     try {
         const userId = req.body.user;
 
         const orderedPizzas = await getAllOrderedPizzas(userId);
         res.json(orderedPizzas)
+
+    } catch (err) {
+        const errors = mapErrors(err);
+        console.log(err);
+
+        res.status(409)
+            .send(errors);
+    }
+})
+
+router.put('/deleteOrder/:pizzaId', async (req, res) => {
+    try {
+        const { pizzaData, userId } = req.body;
+
+        const pizza = await deleteOrder(pizzaData, userId);
+
+        res.json(pizza);
     } catch (err) {
         const errors = mapErrors(err);
         console.log(err);

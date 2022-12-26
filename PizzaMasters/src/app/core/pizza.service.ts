@@ -52,4 +52,9 @@ export class PizzaService {
     return this.httpClient
       .put<IPizza[]>(`${environment.apiUrl}/pizza/cart`, { user })
   }
+
+  deleteOrder$(pizzaData, userId): Observable<void> {
+    return this.httpClient
+      .put<void>(`${environment.apiUrl}/pizza/deleteOrder/${pizzaData._id}`, { pizzaData, userId })
+  }
 }
