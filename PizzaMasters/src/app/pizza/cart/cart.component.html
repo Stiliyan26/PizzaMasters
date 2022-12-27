@@ -8,7 +8,7 @@
 
 <ng-container *ngIf="allPizzasInCart?.length == 0">
     <div id="no-posts" *ngIf="!(isLoading$ | async)">
-        <h1 class="no-posts--title">No orders yet</h1>
+        <h1 class="no-posts--title">Your cart is empty !</h1>
         <p class="no-posts--desc">Add something to your cart <i class="fa-sharp fa-solid fa-arrow-right"></i>
             <a routerLink="/pizza/menu"> Menu</a>
         </p>

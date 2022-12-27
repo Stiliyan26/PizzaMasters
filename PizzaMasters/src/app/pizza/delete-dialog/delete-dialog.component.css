@@ -33,13 +33,13 @@
 
 .dialog-container .dialog-buttons {
     display: flex;
-    gap: 5rem;
+    gap: 2rem;
 }
 
 .dialog-container .del-button {
     background-color: #bc4749;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: 1.5rem;
+    padding: 10px 50px;
     border-radius: 20px;
     color: #f2e8cf;
     font-weight: bold;
@@ -47,8 +47,8 @@
 
 .dialog-container .cancel-button {
     background-color: #6a47bc;
-    font-size: 2rem;
-    padding: 10px 20px;
+    font-size: 1.5rem;
+    padding: 10px 50px;
     border-radius: 20px;
     color: #f2e8cf;
     font-weight: bold;
