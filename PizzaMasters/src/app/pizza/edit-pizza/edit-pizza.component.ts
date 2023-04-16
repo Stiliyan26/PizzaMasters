@@ -6,6 +6,7 @@ import { AuthService } from 'src/app/auth.service';
 import { IPizza } from 'src/app/core/interfaces/pizza';
 import { IUser } from 'src/app/core/interfaces/user';
 import { PizzaService } from 'src/app/core/pizza.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-edit-pizza',
@@ -25,10 +26,13 @@ export class EditPizzaComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private pizzaService: PizzaService,
     private authService: AuthService,
-    private route: Router
+    private route: Router,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Edit Pizza');
+
     combineLatest([
       this.activatedRoute.params
         .pipe(

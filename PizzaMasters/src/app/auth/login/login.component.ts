@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth.service';
 import { IUser } from 'src/app/core/interfaces/user';
 import { StorageService } from 'src/app/core/storage.service';
 import { emailValidator } from '../utils';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private localStorage: StorageService,
-    private router: Router
+    private router: Router,
+    private titleService: Title
   ) { }
 
   shouldShowErrorForControl(controlName: string, sourceGroup: FormGroup = this.loginFormGroup) {
@@ -36,6 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Login');
   }
 
   handleLogin(): void {

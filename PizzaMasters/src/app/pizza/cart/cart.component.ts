@@ -7,6 +7,7 @@ import { IUser } from 'src/app/core/interfaces/user';
 import { PizzaService } from 'src/app/core/pizza.service';
 import { cartDataState, endCartLoadingProcess, startCartLoadingProcess } from '../+store/actions';
 import { IPizzaModuleState } from '../+store/reducers';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-cart',
@@ -25,10 +26,13 @@ export class CartComponent implements OnInit {
   constructor(
     private store: Store<IPizzaModuleState>,
     private pizzaService: PizzaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Cart');
+
     this.store.dispatch(startCartLoadingProcess());
 
     this.currentUser$

@@ -3,9 +3,11 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IPizza } from 'src/app/core/interfaces/pizza';
 import { PizzaService } from 'src/app/core/pizza.service';
+import { Title } from '@angular/platform-browser';
 import { endLoadingProcess, menuDataState, startLoadingProcess } from '../+store/actions';
 import { IPizzaModuleState } from '../+store/reducers';
 import { loadingProcess } from '../+store/selectors';
+
 
 @Component({
   selector: 'app-menu',
@@ -20,10 +22,12 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private store: Store<IPizzaModuleState>,
-    private pizzaService: PizzaService
+    private pizzaService: PizzaService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Menu');
     this.store.dispatch(startLoadingProcess());
 
     this.pizzaService.getAllPizzas$()

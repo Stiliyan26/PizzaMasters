@@ -8,6 +8,8 @@ import { PizzaService } from 'src/app/core/pizza.service';
 import { startLoadingProcess, endLoadingProcess, menuDataState } from '../+store/actions';
 import { IPizzaModuleState } from '../+store/reducers';
 import { loadingProcess } from '../+store/selectors';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-my-posts',
@@ -25,10 +27,13 @@ export class MyPostsComponent implements OnInit {
   constructor(
     private store: Store<IPizzaModuleState>,
     private pizzaService: PizzaService,
-    private authService: AuthService
+    private authService: AuthService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('My Posts');
+
     this.store.dispatch(startLoadingProcess());
 
     this.currentUser$

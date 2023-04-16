@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 import { emailValidator, passwordMatch } from '../utils';
 import { IUser } from 'src/app/core/interfaces/user';
 import { StorageService } from 'src/app/core/storage.service';
+import { Title } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-register',
@@ -43,11 +45,13 @@ export class RegisterComponent implements OnInit {
     private authService: AuthService,
     private router: Router,
     private store: Store<IAuthModuleState>,
-    private localStorage: StorageService
+    private localStorage: StorageService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
-    this.store.dispatch(initializeRegisterState())
+    this.titleService.setTitle('Register');
+    this.store.dispatch(initializeRegisterState());
   }
 
   shouldShowErrorForControl(controlName: string, sourceGroup: FormGroup = this.registerFormGroup) {

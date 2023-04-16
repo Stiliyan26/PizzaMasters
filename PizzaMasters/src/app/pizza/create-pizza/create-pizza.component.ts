@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth.service';
 import { IUser } from 'src/app/core/interfaces/user';
 import { mergeMap, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 
 @Component({
@@ -21,10 +22,12 @@ export class CreatePizzaComponent implements OnInit {
   constructor(
     private pizzaService: PizzaService,
     private authService: AuthService,
-    private route: Router
+    private route: Router,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Create Pizza');
   }
 
   handleCreatePizza(): void {

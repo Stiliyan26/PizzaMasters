@@ -15,7 +15,6 @@ import { DeleteDialogComponent } from './delete-dialog/delete-dialog.component';
 import { CartComponent } from './cart/cart.component';
 
 
-
 @NgModule({
   declarations: [
     MenuComponent,
