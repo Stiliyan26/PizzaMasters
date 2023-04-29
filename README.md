@@ -14,6 +14,7 @@ You may also see any lint errors in the console.
 
 ## Information about the project:
 
+### npm install - to install the node_modules
 ### npm start - starts the api and Angular CLI in one terminal
 
 The api is created with mongodb and express. Framework used for the app is Angular. 
