@@ -1,0 +1,72 @@
+    {   
+    image: pepperoni.jpg
+
+    name: Pepperoni,
+
+    info: Pepperoni is made from a mixture of ground pork and beef mixed with spices and 
+    flavorings. Salt and sodium nitrate are then added as curing agents, which prevent the growth of 
+    unwanted microorganisms. Nitrate is also added, which gives pepperoni its color.
+}
+
+{
+    image: margarita.jpg
+
+    name: Margarita
+
+    info: Pizza Margherita (pronounced mahr-geh-ree-tah) is basically a Neapolitan pizza, typically
+     made with tomatoes, mozzarella cheese, garlic, fresh basil, and extra-virgin olive oil.
+}
+
+{
+    image: hawaiian.jpg
+
+    name: Hawaiian
+
+    info: Classic Hawaiian Pizza combines pizza sauce, cheese, cooked ham, and pineapple. This crowd-pleasing pizza
+     recipe starts with my homemade pizza crust and is finished with a sprinkle of crispy bacon.
+}
+
+{
+    image: buffalo.jpg
+
+    name: Buffalo 
+
+    info: Shredded chicken, spicy buffalo sauce, blue cheese crumbles, and cilantro all cooked together on top
+     of the most delicious crust. This homemade pizza tastes just like delicious Buffalo Wings.
+}
+
+{
+    image: bbq.jpg
+
+    name: BBQ Chicken
+
+    info: The flavors and textures in this pizza are incredible! You have the sweet tang from the BBQ sauce, the meaty chicken, the zesty red onion,
+     fresh cilantro, smoky gouda, soft crust, crispy edges, and ultra cheesy mozzarella covering it all.
+}
+
+{
+    image: veggie.jpg
+
+    name: Veggie
+
+    info: Veggie pizza has (almost) everything: roasted red peppers, baby spinach, onions, mushrooms, tomatoes, and black olives. It's also topped with three kinds of cheese — feta, provolone, and mozzarella
+ — and sprinkled with garlic herb seasoning. It's an awesome way to eat your vegetables!
+}
+
+{
+    image: supreme.jpg
+
+    name: Supreme
+
+    info: It's a true supreme pizza: bacon, pepperoni slices, red and green bell pepper, red onion,
+     black olives, mozzarella, Parmesan, and basil. 
+}
+
+{
+    image: meat.jpg
+
+    name: Meat Pizza
+
+    info: A masterpiece of hearty, high-quality meats including pepperoni, savory sausage, real beef, 
+    hickory-smoked bacon, and julienne-cut Canadian bacon, all topped with real cheese made from mozzarella.
+}

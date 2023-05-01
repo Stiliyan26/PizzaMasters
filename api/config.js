@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+const path = require('path');
 
 const authController = require('./controllers/auth.js');
 const pizzaController = require('./controllers/pizza.js');
@@ -19,6 +20,12 @@ mongoose.connect(MONGO_URI || 'mongodb://localhost/pizzaMasters', {
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!!!');
 })
+
+app.use(express.static(__dirname + '/public'));
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname + '/public/dist/pizza-masters/index.html'));
+});
 
 app.use(morgan('tiny'));
 app.use(cors());
